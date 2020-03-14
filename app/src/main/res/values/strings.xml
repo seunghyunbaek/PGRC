@@ -1,3 +1,21 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">PGRC</string>
+    <string name="app_sub_name">페트 성장률 계산기</string>
+
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_collection">도감</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="btn_server_ee">EE 서버</string>
+
+    <string name="text_lv">레벨</string>
+    <string name="text_hp">피</string>
+    <string name="text_atk">공</string>
+    <string name="text_def">방</string>
+    <string name="text_spd">순</string>
+    <string name="text_growth">성장</string>
+    <string name="text_growth_rate">성장률</string>
+    <string name="text_kind_pet">페트 류</string>
+
 </resources>
