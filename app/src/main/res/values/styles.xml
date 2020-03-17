@@ -8,4 +8,20 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="text_elemental">
+        <item name="android:textSize">18dp</item>
+    </style>
+
+    <style name="text_name">
+        <item name="android:textColor">#FF000000</item>
+        <item name="android:textSize">36dp</item>
+        <item name="android:letterSpacing">0.1</item>
+        <item name="android:fontFamily">@font/bmjua_ttf</item>
+    </style>
+
+    <style name="text_content">
+        <item name="android:textColor">#ff000000</item>
+        <item name="android:textSize">16dp</item>
+    </style>
+
 </resources>

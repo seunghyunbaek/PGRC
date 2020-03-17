@@ -1,33 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
+    <!--    <EditText-->
+    <!--        android:id="@+id/edit_kind_pet_collection"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="16dp"-->
+    <!--        android:layout_marginTop="32dp"-->
+    <!--        android:layout_marginEnd="16dp"-->
+    <!--        android:hint="페트 검색"-->
+    <!--        android:singleLine="true"-->
+    <!--        android:textAlignment="center"-->
+    <!--        android:textSize="20sp"-->
+    <!--        app:layout_constraintEnd_toStartOf="@+id/btn_search_collection"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+    <!--    <AutoCompleteTextView-->
+    <!--        android:id="@+id/edit_kind_pet_collection"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="16dp"-->
+    <!--        android:layout_marginTop="32dp"-->
+    <!--        android:layout_marginEnd="16dp"-->
+    <!--        android:hint="페트 검색"-->
+    <!--        android:singleLine="true"-->
+    <!--        android:textAlignment="center"-->
+    <!--        android:textSize="20sp"-->
+    <!--        app:layout_constraintEnd_toStartOf="@+id/btn_search_collection"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--    <com.google.android.material.textfield.TextInputLayout-->
+    <!--        android:id="@+id/edit_kind_pet_collection"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="16dp"-->
+    <!--        android:layout_marginTop="32dp"-->
+    <!--        android:layout_marginEnd="16dp"-->
+    <!--        android:hint="@string/hint_pet_name"-->
+    <!--        app:layout_constraintEnd_toStartOf="@+id/btn_search_collection"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--        <AutoCompleteTextView-->
+    <!--            android:id="@+id/edit_pet_name_collection"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content" />-->
+
+    <!--    </com.google.android.material.textfield.TextInputLayout>-->
+
+    <Spinner
         android:id="@+id/edit_kind_pet_collection"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
-        android:background="@android:color/transparent"
-        android:hint="페트 검색"
-        android:singleLine="true"
-        android:textAlignment="center"
-        android:textSize="20sp"
+        android:background="@drawable/spinner_background"
+        android:overlapAnchor="false"
+        android:padding="2dp"
         app:layout_constraintEnd_toStartOf="@+id/btn_search_collection"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/btn_search_collection"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginEnd="16dp"
         android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
         android:scaleType="fitCenter"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/edit_kind_pet_collection"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/edit_kind_pet_collection"
@@ -35,33 +84,71 @@
 
     <TextView
         android:id="@+id/text_name_collection"
+        style="@style/text_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
-        android:textSize="36dp"
         app:layout_constraintStart_toStartOf="@+id/edit_kind_pet_collection"
         app:layout_constraintTop_toBottomOf="@+id/edit_kind_pet_collection"
         tools:text="페트 이름" />
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:background="#f00"
-        app:layout_constraintStart_toEndOf="@id/text_name_collection"
-        app:layout_constraintTop_toTopOf="@id/text_name_collection" />
+    <TextView
+        android:id="@+id/text_main_elemental_collection"
+        style="@style/text_elemental"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/text_name_collection"
+        app:layout_constraintStart_toEndOf="@+id/text_name_collection"
+        app:layout_constraintTop_toTopOf="@+id/text_name_collection"
+        tools:text="火" />
+
+    <TextView
+        android:id="@+id/text_main_elemental_value_collection"
+        style="@style/text_elemental"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/text_main_elemental_collection"
+        app:layout_constraintTop_toTopOf="@+id/text_main_elemental_collection"
+        tools:text="70" />
+
+    <TextView
+        android:id="@+id/text_sub_elemental_value_collection"
+        style="@style/text_elemental"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/text_sub_elemental_collection"
+        app:layout_constraintStart_toEndOf="@+id/text_sub_elemental_collection"
+        app:layout_constraintTop_toTopOf="@+id/text_sub_elemental_collection"
+        tools:text="30" />
+
+    <TextView
+        android:id="@+id/text_sub_elemental_collection"
+        style="@style/text_elemental"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toEndOf="@+id/text_main_elemental_value_collection"
+        app:layout_constraintTop_toTopOf="@+id/text_main_elemental_value_collection"
+        tools:text="水" />
 
     <TextView
         android:id="@+id/text_lv_init_collection2"
+        style="@style/text_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
+        android:text="@string/text_lv"
         app:layout_constraintStart_toStartOf="@+id/text_name_collection"
         app:layout_constraintTop_toBottomOf="@+id/text_name_collection"
         tools:text="레벨" />
 
     <TextView
         android:id="@+id/text_lv_init_collection"
+        style="@style/text_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -71,33 +158,39 @@
 
     <TextView
         android:id="@+id/text_hp_init_collection2"
+        style="@style/text_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:text="@string/text_hp"
         app:layout_constraintEnd_toEndOf="@+id/text_lv_init_collection2"
         app:layout_constraintTop_toBottomOf="@+id/text_lv_init_collection2"
         tools:text="피" />
 
     <TextView
         android:id="@+id/text_hp_init_collection"
+        style="@style/text_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@+id/text_lv_init_collection"
         app:layout_constraintTop_toTopOf="@+id/text_hp_init_collection2"
-        tools:text="66" />
+        tools:text="66 ~ 55" />
 
 
     <TextView
         android:id="@+id/text_atk_init_collection2"
+        style="@style/text_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:text="@string/text_atk"
         app:layout_constraintEnd_toEndOf="@+id/text_lv_init_collection2"
         app:layout_constraintTop_toBottomOf="@+id/text_hp_init_collection2"
         tools:text="공" />
 
     <TextView
         android:id="@+id/text_atk_init_collection"
+        style="@style/text_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@+id/text_lv_init_collection"
@@ -106,15 +199,18 @@
 
     <TextView
         android:id="@+id/text_def_init_collection2"
+        style="@style/text_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:text="@string/text_def"
         app:layout_constraintEnd_toEndOf="@+id/text_lv_init_collection2"
         app:layout_constraintTop_toBottomOf="@+id/text_atk_init_collection2"
         tools:text="방" />
 
     <TextView
         android:id="@+id/text_def_init_collection"
+        style="@style/text_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@+id/text_lv_init_collection"
@@ -123,15 +219,18 @@
 
     <TextView
         android:id="@+id/text_spd_init_collection2"
+        style="@style/text_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:text="@string/text_spd"
         app:layout_constraintEnd_toEndOf="@+id/text_lv_init_collection2"
         app:layout_constraintTop_toBottomOf="@+id/text_def_init_collection2"
         tools:text="순" />
 
     <TextView
         android:id="@+id/text_spd_init_collection"
+        style="@style/text_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@+id/text_lv_init_collection"
@@ -140,23 +239,26 @@
 
     <TextView
         android:id="@+id/text_lv_max_collection"
+        style="@style/text_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        app:layout_constraintStart_toEndOf="@+id/text_lv_init_collection"
+        android:layout_marginStart="24dp"
+        app:layout_constraintStart_toEndOf="@+id/text_hp_init_collection"
         app:layout_constraintTop_toTopOf="@+id/text_lv_init_collection"
         tools:text="140" />
 
     <TextView
         android:id="@+id/text_hp_max_collection"
+        style="@style/text_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@+id/text_lv_max_collection"
         app:layout_constraintTop_toTopOf="@+id/text_hp_init_collection2"
-        tools:text="1324" />
+        tools:text="1324 ~ 1555" />
 
     <TextView
         android:id="@+id/text_atk_max_collection"
+        style="@style/text_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@+id/text_lv_max_collection"
@@ -165,6 +267,7 @@
 
     <TextView
         android:id="@+id/text_def_max_collection"
+        style="@style/text_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@+id/text_lv_max_collection"
@@ -173,6 +276,7 @@
 
     <TextView
         android:id="@+id/text_spd_max_collection"
+        style="@style/text_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@+id/text_lv_max_collection"
@@ -181,23 +285,26 @@
 
     <TextView
         android:id="@+id/text_growth_min_collection"
+        style="@style/text_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        app:layout_constraintStart_toEndOf="@+id/text_lv_max_collection"
+        android:layout_marginStart="24dp"
+        app:layout_constraintStart_toEndOf="@+id/text_hp_max_collection"
         app:layout_constraintTop_toTopOf="@+id/text_lv_max_collection"
-        tools:text="최소" />
+        tools:text="성장률" />
 
     <TextView
         android:id="@+id/text_growth_min_hp_collection"
+        style="@style/text_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@+id/text_growth_min_collection"
         app:layout_constraintTop_toTopOf="@+id/text_hp_init_collection2"
-        tools:text="피+1" />
+        tools:text="11.212 ~ 11.121" />
 
     <TextView
         android:id="@+id/text_growth_min_atk_collection"
+        style="@style/text_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@+id/text_growth_min_collection"
@@ -206,6 +313,7 @@
 
     <TextView
         android:id="@+id/text_growth_min_def_collection"
+        style="@style/text_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@+id/text_growth_min_collection"
@@ -214,6 +322,7 @@
 
     <TextView
         android:id="@+id/text_growth_min_spd_collection"
+        style="@style/text_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@+id/text_growth_min_collection"
@@ -221,55 +330,67 @@
         tools:text="순+1" />
 
     <TextView
-        android:id="@+id/text_growth_max_collection"
+        android:id="@+id/text_growth_min_all_collection"
+        style="@style/text_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        app:layout_constraintStart_toEndOf="@+id/text_growth_min_collection"
-        app:layout_constraintTop_toTopOf="@+id/text_growth_min_collection"
-        tools:text="최대" />
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/text_growth_min_collection"
+        app:layout_constraintTop_toBottomOf="@+id/text_spd_init_collection2"
+        tools:text="전체+1" />
 
-    <TextView
-        android:id="@+id/text_growth_max_hp_collection"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/text_growth_max_collection"
-        app:layout_constraintTop_toTopOf="@+id/text_hp_init_collection2"
-        tools:text="피+10" />
 
-    <TextView
-        android:id="@+id/text_growth_max_atk_collection"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/text_growth_max_collection"
-        app:layout_constraintTop_toTopOf="@+id/text_atk_max_collection"
-        tools:text="공+10" />
+    <!--    <TextView-->
+    <!--        android:id="@+id/text_growth_max_collection"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="32dp"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/text_growth_min_collection"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/text_growth_min_collection"-->
+    <!--        tools:text="최대" />-->
 
-    <TextView
-        android:id="@+id/text_growth_max_def_collection"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/text_growth_max_collection"
-        app:layout_constraintTop_toTopOf="@+id/text_def_max_collection"
-        tools:text="방+10" />
+    <!--    <TextView-->
+    <!--        android:id="@+id/text_growth_max_hp_collection"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/text_growth_max_collection"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/text_hp_init_collection2"-->
+    <!--        tools:text="피+10" />-->
 
-    <TextView
-        android:id="@+id/text_growth_max_spd_collection"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/text_growth_max_collection"
-        app:layout_constraintTop_toTopOf="@+id/text_spd_max_collection"
-        tools:text="순+10" />
+    <!--    <TextView-->
+    <!--        android:id="@+id/text_growth_max_atk_collection"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/text_growth_max_collection"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/text_atk_max_collection"-->
+    <!--        tools:text="공+10" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/text_growth_max_def_collection"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/text_growth_max_collection"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/text_def_max_collection"-->
+    <!--        tools:text="방+10" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/text_growth_max_spd_collection"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/text_growth_max_collection"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/text_spd_max_collection"-->
+    <!--        tools:text="순+10" />-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_collection"
         android:layout_width="409dp"
         android:layout_height="0dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_spd_init_collection2" />
+        app:layout_constraintTop_toBottomOf="@+id/text_growth_min_all_collection"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

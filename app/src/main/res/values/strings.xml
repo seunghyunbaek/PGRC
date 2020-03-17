@@ -14,8 +14,24 @@
     <string name="text_atk">공</string>
     <string name="text_def">방</string>
     <string name="text_spd">순</string>
-    <string name="text_growth">성장</string>
-    <string name="text_growth_rate">성장률</string>
+    <string name="text_growth">성장률</string>
     <string name="text_kind_pet">페트 류</string>
+    <string name="hint_pet_name">페트 이름</string>
+
+    <string name="type_yangiro">얀기로 류</string>
+    <string name="name_libino">리비노</string>
+    <string name="name_yangiro">얀기로</string>
+    <string name="name_banboro">반보로</string>
+    <string name="name_bangino">반기노</string>
+    <string name="name_burudon">부르돈</string>
+    <string name="name_gibino">기비노</string>
+
+    <string name="route_libino">포획처, 오형제 시험</string>
+    <string name="route_yangiro">포획처, 오형제 시험</string>
+    <string name="route_banboro">포획처, 오형제 시험</string>
+    <string name="route_bangino">포획처, 오형제 시험</string>
+    <string name="route_burudon">포획처, 오형제 시험</string>
+    <string name="route_gibino">엘프 미션</string>
+
 
 </resources>
