@@ -5,10 +5,13 @@ import best.hyun.pgrc.R
 import best.hyun.pgrc.type.ELEMENTAL
 import best.hyun.pgrc.type.PET_TYPE
 import best.hyun.pgrc.type.Pet
+import best.hyun.pgrc.type.getSerialNumber
 import java.math.RoundingMode
 import java.text.DecimalFormat
 
 class Yangiro : Pet() {
+    override val serialnumber: Int
+        get() = getSerialNumber(name)
     override val name: String
         get() = App.getString(R.string.name_yangiro)
     override val type: PET_TYPE
@@ -80,9 +83,4 @@ class Yangiro : Pet() {
         get() = (maxLvMinDef - initLvMinDef).toFloat() / (maxLv - initLv).toFloat()
     override val minSpdGrowth: Float
         get() = (maxLvMinSpd - initLvMinSpd).toFloat() / (maxLv - initLv).toFloat()
-    override var nowLv: Int? = null
-    override var nowHp: Int? = null
-    override var nowAtk: Int? = null
-    override var nowDef: Int? = null
-    override var nowSpd: Int? = null
 }

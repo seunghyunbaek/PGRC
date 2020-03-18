@@ -10,6 +10,9 @@
     <string name="btn_server_ee">EE 서버</string>
 
     <string name="text_lv">레벨</string>
+    <string name="text_all">전체</string>
+    <string name="text_max">최대</string>
+    <string name="text_min">최소</string>
     <string name="text_hp">피</string>
     <string name="text_atk">공</string>
     <string name="text_def">방</string>

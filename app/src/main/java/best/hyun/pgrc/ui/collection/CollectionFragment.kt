@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
@@ -17,6 +18,7 @@ import best.hyun.pgrc.logd
 import best.hyun.pgrc.type.*
 import best.hyun.pgrc.type.ELEMENTAL.*
 import best.hyun.pgrc.type.yangiro.Libino
+import best.hyun.pgrc.type.yangiro.Yangiro
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 
@@ -26,9 +28,6 @@ class CollectionFragment : Fragment() {
 
     private lateinit var collectionViewModel: CollectionViewModel
 
-//    private lateinit var editName: EditText
-//    private lateinit var editName: AutoCompleteTextView
-//    private lateinit var editName: TextInputEditText
     private lateinit var spinner:Spinner
     private lateinit var textName: TextView
 
@@ -60,7 +59,7 @@ class CollectionFragment : Fragment() {
 
     private lateinit var btnSearch:ImageButton
 
-    private var petList = arrayOf("얀기로", "리비노", "반보로", "반기노", "부르돈", "얀기로", "리비노", "반보로", "반기노", "부르돈", "얀기로", "리비노", "반보로", "반기노", "부르돈", "얀기로", "리비노", "반보로", "반기노", "부르돈", "얀기로", "리비노", "반보로", "반기노", "부르돈")
+    private var petList = arrayOf("얀기로", "리비노", "반보로")
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -71,10 +70,8 @@ class CollectionFragment : Fragment() {
             ViewModelProviders.of(this).get(CollectionViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_collection, container, false)
 
-//        editName = root.findViewById(R.id.edit_kind_pet_collection)
-//        editName = root.findViewById(R.id.edit_pet_name_collection)
-//        editName.setAdapter(ArrayAdapter<String>(requireContext(), android.R.layout.simple_dropdown_item_1line, arrayOf("100","200", "300")))
         spinner = root.findViewById(R.id.edit_kind_pet_collection)
+
         val adapter = ArrayAdapter<String>(requireContext(), R.layout.custom_simple_dropdown_item_1line, petList)
         adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
         spinner.adapter = adapter
@@ -122,16 +119,7 @@ class CollectionFragment : Fragment() {
         growthSpd = root.findViewById(R.id.text_growth_min_spd_collection)
         growthAll = root.findViewById(R.id.text_growth_min_all_collection)
 
-//        var yangiro: Pet
-//        btnSearch = root.findViewById(R.id.btn_search_collection)
-//        btnSearch.setOnClickListener {
-//            yangiro = PetFactory.getPet(YangiroFactory())
-//            setData(yangiro)
-//        }
-
         setObserver()
-
-
 
         return root
     }
@@ -248,5 +236,7 @@ class CollectionFragment : Fragment() {
         collectionViewModel.growthDef.value = String.format("%.3f ~ %.3f", pet.minDefGrowth, pet.maxDefGrowth)
         collectionViewModel.growthSpd.value = String.format("%.3f ~ %.3f", pet.minSpdGrowth, pet.maxSpdGrowth)
         collectionViewModel.growthAll.value = String.format("%.3f ~ %.3f", pet.minAllGrowth, pet.maxAllGrowth)
+
+        PetFactory.getAllPets()
     }
 }

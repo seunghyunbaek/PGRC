@@ -6,54 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!--    <EditText-->
-    <!--        android:id="@+id/edit_kind_pet_collection"-->
-    <!--        android:layout_width="0dp"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_marginStart="16dp"-->
-    <!--        android:layout_marginTop="32dp"-->
-    <!--        android:layout_marginEnd="16dp"-->
-    <!--        android:hint="페트 검색"-->
-    <!--        android:singleLine="true"-->
-    <!--        android:textAlignment="center"-->
-    <!--        android:textSize="20sp"-->
-    <!--        app:layout_constraintEnd_toStartOf="@+id/btn_search_collection"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent" />-->
-    <!--    <AutoCompleteTextView-->
-    <!--        android:id="@+id/edit_kind_pet_collection"-->
-    <!--        android:layout_width="0dp"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_marginStart="16dp"-->
-    <!--        android:layout_marginTop="32dp"-->
-    <!--        android:layout_marginEnd="16dp"-->
-    <!--        android:hint="페트 검색"-->
-    <!--        android:singleLine="true"-->
-    <!--        android:textAlignment="center"-->
-    <!--        android:textSize="20sp"-->
-    <!--        app:layout_constraintEnd_toStartOf="@+id/btn_search_collection"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent" />-->
-
-    <!--    <com.google.android.material.textfield.TextInputLayout-->
-    <!--        android:id="@+id/edit_kind_pet_collection"-->
-    <!--        android:layout_width="0dp"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_marginStart="16dp"-->
-    <!--        android:layout_marginTop="32dp"-->
-    <!--        android:layout_marginEnd="16dp"-->
-    <!--        android:hint="@string/hint_pet_name"-->
-    <!--        app:layout_constraintEnd_toStartOf="@+id/btn_search_collection"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent">-->
-
-    <!--        <AutoCompleteTextView-->
-    <!--            android:id="@+id/edit_pet_name_collection"-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="wrap_content" />-->
-
-    <!--    </com.google.android.material.textfield.TextInputLayout>-->
-
     <Spinner
         android:id="@+id/edit_kind_pet_collection"
         android:layout_width="0dp"
@@ -115,6 +67,16 @@
         tools:text="70" />
 
     <TextView
+        android:id="@+id/text_sub_elemental_collection"
+        style="@style/text_elemental"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toEndOf="@+id/text_main_elemental_value_collection"
+        app:layout_constraintTop_toTopOf="@+id/text_main_elemental_value_collection"
+        tools:text="水" />
+
+    <TextView
         android:id="@+id/text_sub_elemental_value_collection"
         style="@style/text_elemental"
         android:layout_width="wrap_content"
@@ -125,15 +87,17 @@
         app:layout_constraintTop_toTopOf="@+id/text_sub_elemental_collection"
         tools:text="30" />
 
-    <TextView
-        android:id="@+id/text_sub_elemental_collection"
-        style="@style/text_elemental"
+    <Button
+        android:id="@+id/btn_state_collection"
+        style="@android:style/Widget.Material.Button.Inset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        app:layout_constraintStart_toEndOf="@+id/text_main_elemental_value_collection"
-        app:layout_constraintTop_toTopOf="@+id/text_main_elemental_value_collection"
-        tools:text="水" />
+        android:padding="0dp"
+        android:text="@string/text_all"
+        app:layout_constraintBottom_toBottomOf="@+id/text_name_collection"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/text_sub_elemental_value_collection"
+        app:layout_constraintTop_toTopOf="@+id/text_name_collection" />
 
     <TextView
         android:id="@+id/text_lv_init_collection2"
