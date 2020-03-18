@@ -1,26 +1,21 @@
 package best.hyun.pgrc.ui.collection
 
-import android.graphics.Color
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import androidx.core.view.get
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import best.hyun.pgrc.R
-import best.hyun.pgrc.logd
 import best.hyun.pgrc.type.*
 import best.hyun.pgrc.type.ELEMENTAL.*
-import best.hyun.pgrc.type.yangiro.Libino
 import best.hyun.pgrc.type.yangiro.Yangiro
-import com.google.android.material.textfield.TextInputEditText
-import com.google.android.material.textfield.TextInputLayout
+
+enum class VIEWSTATE {
+    MIN, MAX, ALL
+}
 
 class CollectionFragment : Fragment() {
 
@@ -58,8 +53,11 @@ class CollectionFragment : Fragment() {
     private lateinit var growthAll:TextView
 
     private lateinit var btnSearch:ImageButton
+    private lateinit var btnChangeState:Button
 
-    private var petList = arrayOf("얀기로", "리비노", "반보로")
+    private var viewState:VIEWSTATE = VIEWSTATE.ALL
+
+    private var petList = arrayOf("0", "1")
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -82,10 +80,10 @@ class CollectionFragment : Fragment() {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 when(position) {
                     0 -> {
-                        setData(PetFactory.getPet(YangiroFactory()))
+                        setALLData(PetFactory.getPet(YangiroFactory()))
                     }
                     1 -> {
-                        setData(PetFactory.getPet(LibinoFactory()))
+                        setALLData(PetFactory.getPet(LibinoFactory()))
                     }
                 }
             }
@@ -119,12 +117,23 @@ class CollectionFragment : Fragment() {
         growthSpd = root.findViewById(R.id.text_growth_min_spd_collection)
         growthAll = root.findViewById(R.id.text_growth_min_all_collection)
 
+        btnChangeState.setOnClickListener {
+            setViewState(viewState)
+            when(viewState) {
+                VIEWSTATE.MIN -> setMINData(Yangiro())
+                VIEWSTATE.MAX -> setMAXData(Yangiro())
+                VIEWSTATE.ALL -> setALLData(Yangiro())
+            }
+        }
+
         setObserver()
+
+
 
         return root
     }
 
-    fun setObserver() {
+    private fun setObserver() {
         collectionViewModel.name.observe(this, Observer { textName.text = it })
 
         collectionViewModel.mainElemental.observe(this, Observer {
@@ -207,8 +216,78 @@ class CollectionFragment : Fragment() {
         collectionViewModel.growthSpd.observe(this, Observer{ growthSpd.text = it })
         collectionViewModel.growthAll.observe(this, Observer{ growthAll.text = it })
     }
+    private fun setViewState(viewState:VIEWSTATE) {
+        when (viewState) {
+            VIEWSTATE.MIN -> {
+                this.viewState = VIEWSTATE.MAX
+            }
+            VIEWSTATE.MAX -> {
+                this.viewState = VIEWSTATE.ALL
+            }
+            VIEWSTATE.ALL -> {
+                this.viewState = VIEWSTATE.MIN
+            }
+        }
+    }
+    private fun setMINData(pet:Pet) {
+        collectionViewModel.name.value = pet.name
 
-    fun setData(pet:Pet) {
+        collectionViewModel.mainElemental.value = pet.mainElemental
+        collectionViewModel.subElemental.value = pet.subElemental
+
+        collectionViewModel.mainElementalValue.value = pet.mainElementalValue
+        collectionViewModel.subElementalValue.value = pet.subElementalValue
+
+        collectionViewModel.initLv.value = pet.initLv.toString()
+        collectionViewModel.maxLv.value = pet.maxLv.toString()
+        collectionViewModel.growth.value = getString(R.string.text_growth)
+
+        collectionViewModel.initHp.value = String.format("%d", pet.initLvMinHp)
+        collectionViewModel.initAtk.value = String.format("%d", pet.initLvMinAtk)
+        collectionViewModel.initDef.value = String.format("%d", pet.initLvMinDef)
+        collectionViewModel.initSpd.value = String.format("%d", pet.initLvMinSpd)
+
+        collectionViewModel.maxHp.value = String.format("%d", pet.maxLvMinHp)
+        collectionViewModel.maxAtk.value = String.format("%d", pet.maxLvMinAtk)
+        collectionViewModel.maxDef.value = String.format("%d", pet.maxLvMinDef)
+        collectionViewModel.maxSpd.value = String.format("%d", pet.maxLvMinSpd)
+
+        collectionViewModel.growthHp.value = String.format("%.3f", pet.minHpGrowth)
+        collectionViewModel.growthAtk.value = String.format("%.3f", pet.minAtkGrowth)
+        collectionViewModel.growthDef.value = String.format("%.3f", pet.minDefGrowth)
+        collectionViewModel.growthSpd.value = String.format("%.3f", pet.minSpdGrowth)
+        collectionViewModel.growthAll.value = String.format("%.3f", pet.minAllGrowth)
+    }
+    private fun setMAXData(pet:Pet) {
+        collectionViewModel.name.value = pet.name
+
+        collectionViewModel.mainElemental.value = pet.mainElemental
+        collectionViewModel.subElemental.value = pet.subElemental
+
+        collectionViewModel.mainElementalValue.value = pet.mainElementalValue
+        collectionViewModel.subElementalValue.value = pet.subElementalValue
+
+        collectionViewModel.initLv.value = pet.initLv.toString()
+        collectionViewModel.maxLv.value = pet.maxLv.toString()
+        collectionViewModel.growth.value = getString(R.string.text_growth)
+
+        collectionViewModel.initHp.value = String.format("%d", pet.initLvMaxHp)
+        collectionViewModel.initAtk.value = String.format("%d", pet.initLvMaxAtk)
+        collectionViewModel.initDef.value = String.format("%d", pet.initLvMaxDef)
+        collectionViewModel.initSpd.value = String.format("%d", pet.initLvMaxSpd)
+
+        collectionViewModel.maxHp.value = String.format("%d", pet.maxLvMaxHp)
+        collectionViewModel.maxAtk.value = String.format("%d", pet.maxLvMaxAtk)
+        collectionViewModel.maxDef.value = String.format("%d", pet.maxLvMaxDef)
+        collectionViewModel.maxSpd.value = String.format("%d", pet.maxLvMaxSpd)
+
+        collectionViewModel.growthHp.value = String.format("%.3f", pet.maxHpGrowth)
+        collectionViewModel.growthAtk.value = String.format("%.3f", pet.maxAtkGrowth)
+        collectionViewModel.growthDef.value = String.format("%.3f", pet.maxDefGrowth)
+        collectionViewModel.growthSpd.value = String.format("%.3f", pet.maxSpdGrowth)
+        collectionViewModel.growthAll.value = String.format("%.3f", pet.maxAllGrowth)
+    }
+    private fun setALLData(pet:Pet) {
         collectionViewModel.name.value = pet.name
 
         collectionViewModel.mainElemental.value = pet.mainElemental
