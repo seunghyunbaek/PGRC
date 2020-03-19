@@ -6,6 +6,7 @@
     <string name="title_home">Home</string>
     <string name="title_collection">도감</string>
     <string name="title_notifications">Notifications</string>
+    <string name="title_dialog">페트 선택</string>
 
     <string name="btn_server_ee">EE 서버</string>
 

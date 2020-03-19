@@ -1,5 +1,7 @@
 package best.hyun.pgrc.ui.collection
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import best.hyun.pgrc.R
+import best.hyun.pgrc.logd
 import best.hyun.pgrc.type.*
 import best.hyun.pgrc.type.ELEMENTAL.*
 import best.hyun.pgrc.type.yangiro.Yangiro
@@ -57,7 +60,9 @@ class CollectionFragment : Fragment() {
 
     private var viewState:VIEWSTATE = VIEWSTATE.ALL
 
-    private var petList = arrayOf("0", "1")
+    private var petTypeList = PetFactory.getAllTypes()
+    private lateinit var specificTypePets:Array<Pet>
+    private lateinit var specificTypePetNames:Array<CharSequence>
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -70,7 +75,7 @@ class CollectionFragment : Fragment() {
 
         spinner = root.findViewById(R.id.edit_kind_pet_collection)
 
-        val adapter = ArrayAdapter<String>(requireContext(), R.layout.custom_simple_dropdown_item_1line, petList)
+        val adapter = ArrayAdapter<PET_TYPE>(requireContext(), R.layout.custom_simple_dropdown_item_1line, petTypeList)
         adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
         spinner.adapter = adapter
 
@@ -78,14 +83,16 @@ class CollectionFragment : Fragment() {
             override fun onNothingSelected(parent: AdapterView<*>?) {}
 
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                when(position) {
-                    0 -> {
-                        setALLData(PetFactory.getPet(YangiroFactory()))
-                    }
-                    1 -> {
-                        setALLData(PetFactory.getPet(LibinoFactory()))
+                logd(TAG, "onItemSelected: ${petTypeList[position]}")
+
+                when(petTypeList[position]) {
+                    PET_TYPE.YANGIRO -> {
+                        specificTypePets = PetFactory.getSpecificTypePets(PET_TYPE.YANGIRO)
+                        specificTypePetNames = PetFactory.getSpecifcTypeNames(PET_TYPE.YANGIRO)
                     }
                 }
+
+                showPetsDialog(specificTypePets)
             }
         }
 
@@ -117,6 +124,7 @@ class CollectionFragment : Fragment() {
         growthSpd = root.findViewById(R.id.text_growth_min_spd_collection)
         growthAll = root.findViewById(R.id.text_growth_min_all_collection)
 
+        btnChangeState = root.findViewById(R.id.btn_state_collection)
         btnChangeState.setOnClickListener {
             setViewState(viewState)
             when(viewState) {
@@ -127,8 +135,6 @@ class CollectionFragment : Fragment() {
         }
 
         setObserver()
-
-
 
         return root
     }
@@ -216,6 +222,7 @@ class CollectionFragment : Fragment() {
         collectionViewModel.growthSpd.observe(this, Observer{ growthSpd.text = it })
         collectionViewModel.growthAll.observe(this, Observer{ growthAll.text = it })
     }
+
     private fun setViewState(viewState:VIEWSTATE) {
         when (viewState) {
             VIEWSTATE.MIN -> {
@@ -317,5 +324,22 @@ class CollectionFragment : Fragment() {
         collectionViewModel.growthAll.value = String.format("%.3f ~ %.3f", pet.minAllGrowth, pet.maxAllGrowth)
 
         PetFactory.getAllPets()
+    }
+
+    private fun showPetsDialog(specificTypePets:Array<Pet>) {
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setTitle(getString(R.string.title_dialog))
+            .setItems(specificTypePetNames, DialogInterface.OnClickListener{ _, pos ->
+
+                logd(TAG, "showPetsDialog(): ${specificTypePets[pos]}")
+                when(viewState) {
+                    VIEWSTATE.MIN -> { setMINData(specificTypePets[pos]) }
+                    VIEWSTATE.MAX -> { setMAXData(specificTypePets[pos]) }
+                    VIEWSTATE.ALL -> { setALLData(specificTypePets[pos]) }
+                }
+            })
+
+        val dialog = builder.create()
+        dialog.show()
     }
 }

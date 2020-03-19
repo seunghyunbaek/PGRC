@@ -17,7 +17,7 @@ enum class ELEMENTAL_COLOR(val rgb: Int) {
 }
 
 enum class PET_TYPE(val serialNumber:Int) {
-    YANGIRO(100)
+    YANGIRO(100), OGAROS(200)
 }
 
 fun getSerialNumber(name:String) :Int {
@@ -28,7 +28,6 @@ fun getSerialNumber(name:String) :Int {
         App.getString(R.string.name_gibino) -> { return YANGIRO.serialNumber + 4}
         App.getString(R.string.name_libino) -> { return YANGIRO.serialNumber + 5}
         App.getString(R.string.name_yangiro) -> { return YANGIRO.serialNumber + 6}
-
         else -> { return -1 }
     }
 }
