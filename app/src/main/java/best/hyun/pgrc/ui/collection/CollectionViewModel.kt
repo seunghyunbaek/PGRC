@@ -8,6 +8,7 @@ import best.hyun.pgrc.type.ELEMENTAL
 class CollectionViewModel : ViewModel() {
 
     val name = MutableLiveData<String>()
+    val viewState = MutableLiveData<VIEWSTATE>()
 
     val mainElemental = MutableLiveData<ELEMENTAL>()
     val subElemental = MutableLiveData<ELEMENTAL?>()

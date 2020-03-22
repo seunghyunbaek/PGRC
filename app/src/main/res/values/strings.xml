@@ -29,6 +29,13 @@
     <string name="name_bangino">반기노</string>
     <string name="name_burudon">부르돈</string>
     <string name="name_gibino">기비노</string>
+    <string name="name_bino">비노</string>
+    <string name="name_giro">기로</string>
+    <string name="name_boro">보로</string>
+    <string name="name_gino">기노</string>
+    <string name="name_rudon">르돈</string>
+    <string name="name_ssagat">싸가트</string>
+    <string name="name_teinos">테이노스</string>
 
     <string name="route_libino">포획처, 오형제 시험</string>
     <string name="route_yangiro">포획처, 오형제 시험</string>
@@ -36,6 +43,31 @@
     <string name="route_bangino">포획처, 오형제 시험</string>
     <string name="route_burudon">포획처, 오형제 시험</string>
     <string name="route_gibino">엘프 미션</string>
+    <string name="route_bino">페트 진화</string>
+    <string name="route_giro">페트 진화</string>
+    <string name="route_boro">페트 진화</string>
+    <string name="route_gino">페트 진화</string>
+    <string name="route_rudon">페트 진화</string>
+    <string name="route_ssagat">이벤트 교환</string>
+    <string name="route_teinos">이벤트 교환</string>
 
+    <string name="type_ogaros">오가로스 류</string>
+    <string name="name_ogaros">오가로스</string>
+    <string name="name_orgon">오르곤</string>
+    <string name="name_mogaros">모가로스</string>
+    <string name="name_golos">골로스</string>
+    <string name="name_norgon">노르곤</string>
+    <string name="name_pooryong">푸룡</string>
+    <string name="name_jigaros">지가로스</string>
+    <string name="name_kalos">칼로스</string>
+
+    <string name="route_ogaros">포획처</string>
+    <string name="route_orgon">퀴즈 삼형제</string>
+    <string name="route_mogaros">붉은 폭풍</string>
+    <string name="route_golos">5환</string>
+    <string name="route_norgon">이벤트 교환</string>
+    <string name="route_pooryong">이벤트 교환</string>
+    <string name="route_jigaros">이벤트 교환</string>
+    <string name="route_kalos">이벤트 교환</string>
 
 </resources>

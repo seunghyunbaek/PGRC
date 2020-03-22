@@ -1,4 +1,4 @@
-package best.hyun.pgrc.type.yangiro
+package best.hyun.pgrc.type.ogaros
 
 import best.hyun.pgrc.App
 import best.hyun.pgrc.R
@@ -7,18 +7,17 @@ import best.hyun.pgrc.type.PET_TYPE
 import best.hyun.pgrc.type.Pet
 import best.hyun.pgrc.type.getSerialNumber
 
-class Banboro : Pet() {
 
+class Golos : Pet() {
     override val serialnumber: Int
         get() = getSerialNumber(name)
-
     override val name: String
-        get() = App.getString(R.string.name_banboro)
+        get() = App.getString(R.string.name_golos)
     override val type: PET_TYPE
-        get() = PET_TYPE.YANGIRO
+        get() = PET_TYPE.OGAROS
     override var reincarnation: Boolean = false
     override val getRoute: String
-        get() = App.getString(R.string.route_banboro)
+        get() = App.getString(R.string.route_golos)
     override val mainElemental: ELEMENTAL
         get() = ELEMENTAL.FIRE
     override val subElemental: ELEMENTAL?
@@ -30,41 +29,41 @@ class Banboro : Pet() {
     override val initLv: Int
         get() = 1
     override val initLvMaxHp: Int
-        get() = 59
+        get() = 60
     override val initLvMaxAtk: Int
-        get() = 14
+        get() = 13
     override val initLvMaxDef: Int
-        get() = 8
+        get() = 11
     override val initLvMaxSpd: Int
-        get() = 8
+        get() = 7
     override val maxLv: Int
         get() = 140
     override val maxLvMaxHp: Int
-        get() = 1455
+        get() = 1416
     override val maxLvMaxAtk: Int
-        get() = 350
+        get() = 320
     override val maxLvMaxDef: Int
-        get() = 195
+        get() = 258
     override val maxLvMaxSpd: Int
-        get() = 196
-    override val minAllGrowth: Double
-        get() = 4.427
-    override val maxAllGrowth: Double
-        get() = 5.134
+        get() = 176
     override val initLvMinHp: Int
         get() = 46
     override val initLvMinAtk: Int
         get() = 11
     override val initLvMinDef: Int
-        get() = 5
+        get() = 8
     override val initLvMinSpd: Int
-        get() = 6
+        get() = 5
     override val maxLvMinHp: Int
-        get() = 1245
+        get() = 1205
     override val maxLvMinAtk: Int
-        get() = 311
+        get() = 282
     override val maxLvMinDef: Int
-        get() = 157
+        get() = 220
     override val maxLvMinSpd: Int
-        get() = 165
+        get() = 144
+    override val minAllGrowth: Double
+        get() = 4.513
+    override val maxAllGrowth: Double
+        get() = 5.220
 }

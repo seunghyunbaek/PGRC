@@ -1,7 +1,6 @@
 package best.hyun.pgrc.ui.collection
 
 import android.app.AlertDialog
-import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,14 +9,18 @@ import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import best.hyun.pgrc.App
 import best.hyun.pgrc.R
 import best.hyun.pgrc.logd
 import best.hyun.pgrc.type.*
 import best.hyun.pgrc.type.ELEMENTAL.*
-import best.hyun.pgrc.type.yangiro.Yangiro
+import kotlinx.android.synthetic.main.item_collection.view.*
 
-enum class VIEWSTATE {
-    MIN, MAX, ALL
+
+enum class VIEWSTATE(val state:String) {
+    MIN(App.getString(R.string.text_min)), MAX(App.getString(R.string.text_max)), ALL(App.getString(R.string.text_all))
 }
 
 class CollectionFragment : Fragment() {
@@ -28,6 +31,7 @@ class CollectionFragment : Fragment() {
 
     private lateinit var spinner:Spinner
     private lateinit var textName: TextView
+    private lateinit var btnViewState:Button
 
     private lateinit var textMainElemental: TextView
     private lateinit var textSubElemental: TextView
@@ -55,14 +59,13 @@ class CollectionFragment : Fragment() {
     private lateinit var growthSpd:TextView
     private lateinit var growthAll:TextView
 
-    private lateinit var btnSearch:ImageButton
-    private lateinit var btnChangeState:Button
+    private lateinit var recycler: RecyclerView
 
-    private var viewState:VIEWSTATE = VIEWSTATE.ALL
+    private lateinit var petTypeList: Array<PET_TYPE>
+    private lateinit var typePets:Array<Pet>
+    private lateinit var typePetNames:Array<CharSequence>
 
-    private var petTypeList = PetFactory.getAllTypes()
-    private lateinit var specificTypePets:Array<Pet>
-    private lateinit var specificTypePetNames:Array<CharSequence>
+    private lateinit var currentPet:Pet
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -75,28 +78,8 @@ class CollectionFragment : Fragment() {
 
         spinner = root.findViewById(R.id.edit_kind_pet_collection)
 
-        val adapter = ArrayAdapter<PET_TYPE>(requireContext(), R.layout.custom_simple_dropdown_item_1line, petTypeList)
-        adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
-        spinner.adapter = adapter
-
-        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onNothingSelected(parent: AdapterView<*>?) {}
-
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                logd(TAG, "onItemSelected: ${petTypeList[position]}")
-
-                when(petTypeList[position]) {
-                    PET_TYPE.YANGIRO -> {
-                        specificTypePets = PetFactory.getSpecificTypePets(PET_TYPE.YANGIRO)
-                        specificTypePetNames = PetFactory.getSpecifcTypeNames(PET_TYPE.YANGIRO)
-                    }
-                }
-
-                showPetsDialog(specificTypePets)
-            }
-        }
-
         textName = root.findViewById(R.id.text_name_collection)
+        btnViewState = root.findViewById(R.id.btn_state_collection)
 
         textMainElemental = root.findViewById(R.id.text_main_elemental_collection)
         textSubElemental = root.findViewById(R.id.text_sub_elemental_collection)
@@ -124,23 +107,61 @@ class CollectionFragment : Fragment() {
         growthSpd = root.findViewById(R.id.text_growth_min_spd_collection)
         growthAll = root.findViewById(R.id.text_growth_min_all_collection)
 
-        btnChangeState = root.findViewById(R.id.btn_state_collection)
-        btnChangeState.setOnClickListener {
-            setViewState(viewState)
-            when(viewState) {
-                VIEWSTATE.MIN -> setMINData(Yangiro())
-                VIEWSTATE.MAX -> setMAXData(Yangiro())
-                VIEWSTATE.ALL -> setALLData(Yangiro())
-            }
-        }
+        recycler = root.findViewById(R.id.recycler_collection)
 
         setObserver()
 
         return root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        petTypeList = PetFactory.getPetTypes()
+        typePets = PetFactory.getTypePets(petTypeList[0])
+        typePetNames = PetFactory.getTypePetNames(petTypeList[0])
+        currentPet = typePets[0]
+
+        recycler.adapter = CollectionAdapter()
+        recycler.layoutManager = GridLayoutManager(requireContext(), 3)
+
+        val adapter = ArrayAdapter<PET_TYPE>(requireContext(), R.layout.custom_simple_dropdown_item_1line, petTypeList)
+        adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
+        spinner.adapter = adapter
+        spinner.setSelection(0, false)
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onNothingSelected(parent: AdapterView<*>?) { logd(TAG, "onNothingSelected(): ${parent.toString()}") }
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                val petType = petTypeList[position]
+                typePets = PetFactory.getTypePets(petType)
+                typePetNames = PetFactory.getTypePetNames(petType)
+                adapter.notifyDataSetChanged()
+                (recycler.adapter as CollectionAdapter).notifyDataSetChanged()
+//                specificTypePetNames = PetFactory.getTypePetNames2(specificTypePets)
+                showPetsDialog(typePets)
+            }
+        }
+
+        // 최소, 최대, 모두 보기
+        collectionViewModel.viewState.value = VIEWSTATE.ALL
+        btnViewState.setOnClickListener {
+            setViewState(collectionViewModel.viewState.value!!)
+            when(collectionViewModel.viewState.value) {
+                VIEWSTATE.MIN -> setMINData(currentPet)
+                VIEWSTATE.MAX -> setMAXData(currentPet)
+                VIEWSTATE.ALL -> setALLData(currentPet)
+            }
+        }
+
+        // 처음 화면에 보여질 펫
+        setALLData(currentPet)
+    }
+
+
     private fun setObserver() {
         collectionViewModel.name.observe(this, Observer { textName.text = it })
+        collectionViewModel.viewState.observe(this, Observer{ btnViewState.text =  it.state})
 
         collectionViewModel.mainElemental.observe(this, Observer {
             textMainElemental.text = when(it) {
@@ -222,18 +243,18 @@ class CollectionFragment : Fragment() {
         collectionViewModel.growthSpd.observe(this, Observer{ growthSpd.text = it })
         collectionViewModel.growthAll.observe(this, Observer{ growthAll.text = it })
     }
-
     private fun setViewState(viewState:VIEWSTATE) {
         when (viewState) {
-            VIEWSTATE.MIN -> {
-                this.viewState = VIEWSTATE.MAX
-            }
-            VIEWSTATE.MAX -> {
-                this.viewState = VIEWSTATE.ALL
-            }
-            VIEWSTATE.ALL -> {
-                this.viewState = VIEWSTATE.MIN
-            }
+            VIEWSTATE.MIN -> { collectionViewModel.viewState.value = VIEWSTATE.MAX }
+            VIEWSTATE.MAX -> { collectionViewModel.viewState.value = VIEWSTATE.ALL }
+            VIEWSTATE.ALL -> { collectionViewModel.viewState.value = VIEWSTATE.MIN }
+        }
+    }
+    private fun setData(pet:Pet) {
+        when(collectionViewModel.viewState.value) {
+            VIEWSTATE.MIN -> setMINData(pet)
+            VIEWSTATE.MAX -> setMAXData(pet)
+            VIEWSTATE.ALL -> setALLData(pet)
         }
     }
     private fun setMINData(pet:Pet) {
@@ -307,39 +328,54 @@ class CollectionFragment : Fragment() {
         collectionViewModel.maxLv.value = pet.maxLv.toString()
         collectionViewModel.growth.value = getString(R.string.text_growth)
 
-        collectionViewModel.initHp.value = String.format("%d ~ %d", pet.initLvMinHp, pet.initLvMaxHp)
-        collectionViewModel.initAtk.value = String.format("%d ~ %d", pet.initLvMinAtk, pet.initLvMaxAtk)
-        collectionViewModel.initDef.value = String.format("%d ~ %d", pet.initLvMinDef, pet.initLvMaxDef)
-        collectionViewModel.initSpd.value = String.format("%d ~ %d", pet.initLvMinSpd, pet.initLvMaxSpd)
+        collectionViewModel.initHp.value = String.format("%d - %d", pet.initLvMinHp, pet.initLvMaxHp)
+        collectionViewModel.initAtk.value = String.format("%d - %d", pet.initLvMinAtk, pet.initLvMaxAtk)
+        collectionViewModel.initDef.value = String.format("%d - %d", pet.initLvMinDef, pet.initLvMaxDef)
+        collectionViewModel.initSpd.value = String.format("%d - %d", pet.initLvMinSpd, pet.initLvMaxSpd)
 
-        collectionViewModel.maxHp.value = String.format("%d ~ %d", pet.maxLvMinHp, pet.maxLvMaxHp)
-        collectionViewModel.maxAtk.value = String.format("%d ~ %d", pet.maxLvMinAtk, pet.maxLvMaxAtk)
-        collectionViewModel.maxDef.value = String.format("%d ~ %d", pet.maxLvMinDef, pet.maxLvMaxDef)
-        collectionViewModel.maxSpd.value = String.format("%d ~ %d", pet.maxLvMinSpd, pet.maxLvMaxSpd)
+        collectionViewModel.maxHp.value = String.format("%d - %d", pet.maxLvMinHp, pet.maxLvMaxHp)
+        collectionViewModel.maxAtk.value = String.format("%d - %d", pet.maxLvMinAtk, pet.maxLvMaxAtk)
+        collectionViewModel.maxDef.value = String.format("%d - %d", pet.maxLvMinDef, pet.maxLvMaxDef)
+        collectionViewModel.maxSpd.value = String.format("%d - %d", pet.maxLvMinSpd, pet.maxLvMaxSpd)
 
-        collectionViewModel.growthHp.value = String.format("%.3f ~ %.3f", pet.minHpGrowth, pet.maxHpGrowth)
-        collectionViewModel.growthAtk.value = String.format("%.3f ~ %.3f", pet.minAtkGrowth, pet.maxAtkGrowth)
-        collectionViewModel.growthDef.value = String.format("%.3f ~ %.3f", pet.minDefGrowth, pet.maxDefGrowth)
-        collectionViewModel.growthSpd.value = String.format("%.3f ~ %.3f", pet.minSpdGrowth, pet.maxSpdGrowth)
-        collectionViewModel.growthAll.value = String.format("%.3f ~ %.3f", pet.minAllGrowth, pet.maxAllGrowth)
-
-        PetFactory.getAllPets()
+        collectionViewModel.growthHp.value = String.format("%.3f - %.3f", pet.minHpGrowth, pet.maxHpGrowth)
+        collectionViewModel.growthAtk.value = String.format("%.3f - %.3f", pet.minAtkGrowth, pet.maxAtkGrowth)
+        collectionViewModel.growthDef.value = String.format("%.3f - %.3f", pet.minDefGrowth, pet.maxDefGrowth)
+        collectionViewModel.growthSpd.value = String.format("%.3f - %.3f", pet.minSpdGrowth, pet.maxSpdGrowth)
+        collectionViewModel.growthAll.value = String.format("%.3f - %.3f", pet.minAllGrowth, pet.maxAllGrowth)
     }
-
-    private fun showPetsDialog(specificTypePets:Array<Pet>) {
+    private fun showPetsDialog(selectedTypePets:Array<Pet>) {
         val builder = AlertDialog.Builder(requireContext())
-        builder.setTitle(getString(R.string.title_dialog))
-            .setItems(specificTypePetNames, DialogInterface.OnClickListener{ _, pos ->
-
-                logd(TAG, "showPetsDialog(): ${specificTypePets[pos]}")
-                when(viewState) {
-                    VIEWSTATE.MIN -> { setMINData(specificTypePets[pos]) }
-                    VIEWSTATE.MAX -> { setMAXData(specificTypePets[pos]) }
-                    VIEWSTATE.ALL -> { setALLData(specificTypePets[pos]) }
-                }
-            })
+//        builder.setTitle(getString(R.string.title_dialog))
+            .setItems(typePetNames) { _, pos ->
+                currentPet = selectedTypePets[pos]
+                setData(currentPet)
+            }
 
         val dialog = builder.create()
         dialog.show()
     }
+    inner class CollectionAdapter:RecyclerView.Adapter<CollectionAdapter.ViewHolder>() {
+
+        override fun getItemCount(): Int = typePets.size
+
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+            val viewHolder = LayoutInflater.from(requireContext()).inflate(R.layout.item_collection, parent,false)
+
+            return ViewHolder(viewHolder)
+        }
+
+        override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+            holder.item.text = typePets[position].name
+            holder.item.setOnClickListener {
+                currentPet = typePets[position]
+                setData(currentPet)
+            }
+        }
+
+        inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+            val item = itemView.btn_collection_i
+        }
+    }
+
 }

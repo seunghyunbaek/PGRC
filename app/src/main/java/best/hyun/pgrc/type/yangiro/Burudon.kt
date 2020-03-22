@@ -45,18 +45,10 @@ class Burudon: Pet() {
         get() = 188
     override val maxLvMaxSpd: Int
         get() = 210
-    override val minAllGrowth: Float
-        get() = 4.427F
-    override val maxAllGrowth: Float
-        get() = 5.134F
-    override val maxHpGrowth: Float
-        get() = (maxLvMaxHp - initLvMaxHp).toFloat() / (maxLv - initLv).toFloat()
-    override val maxAtkGrowth: Float
-        get() = (maxLvMaxAtk - initLvMaxAtk).toFloat() / (maxLv - initLv).toFloat()
-    override val maxDefGrowth: Float
-        get() = (maxLvMaxDef - initLvMaxDef).toFloat() / (maxLv - initLv).toFloat()
-    override val maxSpdGrowth: Float
-        get() = (maxLvMaxSpd - initLvMaxSpd).toFloat() / (maxLv - initLv).toFloat()
+    override val minAllGrowth: Double
+        get() = 4.427
+    override val maxAllGrowth: Double
+        get() = 5.134
     override val initLvMinHp: Int
         get() = 43
     override val initLvMinAtk: Int
@@ -73,12 +65,4 @@ class Burudon: Pet() {
         get() = 149
     override val maxLvMinSpd: Int
         get() = 178
-    override val minHpGrowth: Float
-        get() = (maxLvMinHp - initLvMinHp).toFloat() / (maxLv - initLv).toFloat()
-    override val minAtkGrowth: Float
-        get() = (maxLvMinAtk - initLvMinAtk).toFloat() / (maxLv - initLv).toFloat()
-    override val minDefGrowth: Float
-        get() = (maxLvMinDef - initLvMinDef).toFloat() / (maxLv - initLv).toFloat()
-    override val minSpdGrowth: Float
-        get() = (maxLvMinSpd - initLvMinSpd).toFloat() / (maxLv - initLv).toFloat()
 }

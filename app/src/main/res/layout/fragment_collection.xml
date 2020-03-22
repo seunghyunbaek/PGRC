@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Spinner
+    <best.hyun.pgrc.PetTypeSpinner
         android:id="@+id/edit_kind_pet_collection"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -16,23 +16,9 @@
         android:background="@drawable/spinner_background"
         android:overlapAnchor="false"
         android:padding="2dp"
-        app:layout_constraintEnd_toStartOf="@+id/btn_search_collection"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/btn_search_collection"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginEnd="16dp"
-        android:adjustViewBounds="true"
-        android:background="@android:color/transparent"
-        android:scaleType="fitCenter"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@+id/edit_kind_pet_collection"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/edit_kind_pet_collection"
-        app:srcCompat="@drawable/ic_search_black_24dp" />
 
     <TextView
         android:id="@+id/text_name_collection"
@@ -206,8 +192,9 @@
         style="@style/text_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        app:layout_constraintStart_toEndOf="@+id/text_hp_init_collection"
+        app:layout_constraintEnd_toStartOf="@+id/text_growth_min_collection"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/text_lv_init_collection"
         app:layout_constraintTop_toTopOf="@+id/text_lv_init_collection"
         tools:text="140" />
 
@@ -252,8 +239,9 @@
         style="@style/text_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        app:layout_constraintStart_toEndOf="@+id/text_hp_max_collection"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/text_lv_max_collection"
         app:layout_constraintTop_toTopOf="@+id/text_lv_max_collection"
         tools:text="성장률" />
 
@@ -347,12 +335,14 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_collection"
-        android:layout_width="409dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="32dp"
+        android:paddingBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_growth_min_all_collection"
         app:layout_constraintVertical_bias="0.0" />

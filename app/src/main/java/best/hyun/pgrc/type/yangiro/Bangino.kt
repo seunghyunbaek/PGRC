@@ -45,18 +45,10 @@ class Bangino : Pet() {
         get() = 207
     override val maxLvMaxSpd: Int
         get() = 175
-    override val minAllGrowth: Float
-        get() = 4.387F
-    override val maxAllGrowth: Float
-        get() = 5.122F
-    override val maxHpGrowth: Float
-        get() = (maxLvMaxHp - initLvMaxHp).toFloat() / (maxLv - initLv).toFloat()
-    override val maxAtkGrowth: Float
-        get() = (maxLvMaxAtk - initLvMaxAtk).toFloat() / (maxLv - initLv).toFloat()
-    override val maxDefGrowth: Float
-        get() = (maxLvMaxDef - initLvMaxDef).toFloat() / (maxLv - initLv).toFloat()
-    override val maxSpdGrowth: Float
-        get() = (maxLvMaxSpd - initLvMaxSpd).toFloat() / (maxLv - initLv).toFloat()
+    override val minAllGrowth: Double
+        get() = 4.387
+    override val maxAllGrowth: Double
+        get() = 5.122
     override val initLvMinHp: Int
         get() = 42
     override val initLvMinAtk: Int
@@ -73,12 +65,4 @@ class Bangino : Pet() {
         get() = 167
     override val maxLvMinSpd: Int
         get() = 143
-    override val minHpGrowth: Float
-        get() = (maxLvMinHp - initLvMinHp).toFloat() / (maxLv - initLv).toFloat()
-    override val minAtkGrowth: Float
-        get() = (maxLvMinAtk - initLvMinAtk).toFloat() / (maxLv - initLv).toFloat()
-    override val minDefGrowth: Float
-        get() = (maxLvMinDef - initLvMinDef).toFloat() / (maxLv - initLv).toFloat()
-    override val minSpdGrowth: Float
-        get() = (maxLvMinSpd - initLvMinSpd).toFloat() / (maxLv - initLv).toFloat()
 }

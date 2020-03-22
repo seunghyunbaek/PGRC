@@ -22,63 +22,47 @@ class Gibino : Pet() {
     override val subElemental: ELEMENTAL?
         get() = ELEMENTAL.WIND
     override val mainElementalValue: Int
-        get() = 50
+        get() = 80
     override val subElementalValue: Int
-        get() = 50
+        get() = 20
     override val initLv: Int
         get() = 1
     override val initLvMaxHp: Int
-        get() = 59
+        get() = 64
     override val initLvMaxAtk: Int
-        get() = 14
+        get() = 15
     override val initLvMaxDef: Int
-        get() = 8
+        get() = 9
     override val initLvMaxSpd: Int
         get() = 8
     override val maxLv: Int
         get() = 140
     override val maxLvMaxHp: Int
-        get() = 1455
+        get() = 1480
     override val maxLvMaxAtk: Int
-        get() = 350
+        get() = 366
     override val maxLvMaxDef: Int
-        get() = 195
+        get() = 211
     override val maxLvMaxSpd: Int
-        get() = 196
-    override val minAllGrowth: Float
-        get() = 4.427F
-    override val maxAllGrowth: Float
-        get() = 5.134F
-    override val maxHpGrowth: Float
-        get() = (maxLvMaxHp - initLvMaxHp).toFloat() / (maxLv - initLv).toFloat()
-    override val maxAtkGrowth: Float
-        get() = (maxLvMaxAtk - initLvMaxAtk).toFloat() / (maxLv - initLv).toFloat()
-    override val maxDefGrowth: Float
-        get() = (maxLvMaxDef - initLvMaxDef).toFloat() / (maxLv - initLv).toFloat()
-    override val maxSpdGrowth: Float
-        get() = (maxLvMaxSpd - initLvMaxSpd).toFloat() / (maxLv - initLv).toFloat()
+        get() = 190
+    override val minAllGrowth: Double
+        get() = 4.584
+    override val maxAllGrowth: Double
+        get() = 5.291
     override val initLvMinHp: Int
-        get() = 46
+        get() = 50
     override val initLvMinAtk: Int
-        get() = 11
+        get() = 13
     override val initLvMinDef: Int
-        get() = 5
+        get() = 6
     override val initLvMinSpd: Int
         get() = 6
     override val maxLvMinHp: Int
-        get() = 1245
+        get() = 1269
     override val maxLvMinAtk: Int
-        get() = 311
+        get() = 327
     override val maxLvMinDef: Int
-        get() = 157
+        get() = 172
     override val maxLvMinSpd: Int
-        get() = 165
-    override val minHpGrowth: Float
-        get() = (maxLvMinHp - initLvMinHp).toFloat() / (maxLv - initLv).toFloat()
-    override val minAtkGrowth: Float
-        get() = (maxLvMinAtk - initLvMinAtk).toFloat() / (maxLv - initLv).toFloat()
-    override val minDefGrowth: Float
-        get() = (maxLvMinDef - initLvMinDef).toFloat() / (maxLv - initLv).toFloat()
-    override val minSpdGrowth: Float
-        get() = (maxLvMinSpd - initLvMinSpd).toFloat() / (maxLv - initLv).toFloat()
+        get() = 158
 }
