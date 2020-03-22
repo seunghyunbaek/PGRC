@@ -8,15 +8,20 @@ import best.hyun.pgrc.type.PET_TYPE.*
 import best.hyun.pgrc.type.yangiro.Yangiro
 
 
-enum class ELEMENTAL {
-    EARTH, WATER, FIRE, WIND
-}
+enum class ELEMENTAL { EARTH, WATER, FIRE, WIND }
 
 enum class ELEMENTAL_COLOR(val rgb: Int) {
-    EARTH(Color.rgb(0,180,0)), WATER(Color.BLUE), FIRE(Color.RED), WIND(Color.rgb(230,190,0))
+    EARTH(Color.rgb(0,180,0)),
+    WATER(Color.BLUE),
+    FIRE(Color.RED),
+    WIND(Color.rgb(230,190,0))
 }
 
 enum class PET_TYPE(val serialNumber:Int, val typeName:String) {
+    SPECIAL(100, App.getString(R.string.type_special)),
+    FOURGUARDIANSOGDS(200, App.getString(R.string.type_fourguardiangods)),
+    WEREWOLF(300, App.getString(R.string.type_werewolf)),
+    BEAST(400, App.getString(R.string.type_beast)),
     YANGIRO(500,  App.getString(R.string.type_yangiro)),
     OGAROS(600, App.getString(R.string.type_ogaros))
     ;
@@ -26,6 +31,38 @@ enum class PET_TYPE(val serialNumber:Int, val typeName:String) {
 
 fun getSerialNumber(name:String) :Int {
     when(name) {
+        App.getString(R.string.name_laiby) -> { return SPECIAL.serialNumber + 1 }
+        App.getString(R.string.name_bokwoori) -> { return SPECIAL.serialNumber + 2 }
+        App.getString(R.string.name_fywable) -> { return SPECIAL.serialNumber + 3 }
+        App.getString(R.string.name_peruru) -> { return SPECIAL.serialNumber + 4 }
+        App.getString(R.string.name_dorudoru) -> { return SPECIAL.serialNumber + 5 }
+        App.getString(R.string.name_youngicedragon) -> { return SPECIAL.serialNumber + 6 }
+        App.getString(R.string.name_kau) -> { return SPECIAL.serialNumber + 7 }
+        App.getString(R.string.name_hubaty) -> { return SPECIAL.serialNumber + 8 }
+
+        App.getString(R.string.name_whitetiger) -> { return FOURGUARDIANSOGDS.serialNumber + 1}
+        App.getString(R.string.name_redbird) -> { return FOURGUARDIANSOGDS.serialNumber + 2}
+        App.getString(R.string.name_blacktortoise) -> { return FOURGUARDIANSOGDS.serialNumber + 3}
+        App.getString(R.string.name_bluedragon) -> { return FOURGUARDIANSOGDS.serialNumber + 4}
+
+        App.getString(R.string.name_earthwerewolf) -> { return WEREWOLF.serialNumber + 1 }
+        App.getString(R.string.name_waterwerewolf) -> { return WEREWOLF.serialNumber + 2 }
+        App.getString(R.string.name_firewerewolf) -> { return WEREWOLF.serialNumber + 3 }
+        App.getString(R.string.name_windwerewolf) -> { return WEREWOLF.serialNumber + 4 }
+
+        App.getString(R.string.name_earthhorse) -> { return BEAST.serialNumber + 1 }
+        App.getString(R.string.name_waterhorse) -> { return BEAST.serialNumber + 2 }
+        App.getString(R.string.name_firehorse) -> { return BEAST.serialNumber + 3 }
+        App.getString(R.string.name_windhorse) -> { return BEAST.serialNumber + 4 }
+        App.getString(R.string.name_mecaearthhorse) -> { return BEAST.serialNumber + 5 }
+        App.getString(R.string.name_mecawaterhorse) -> { return BEAST.serialNumber + 6 }
+        App.getString(R.string.name_mecafirehorse) -> { return BEAST.serialNumber + 7 }
+        App.getString(R.string.name_mecawindhorse) -> { return BEAST.serialNumber + 8 }
+        App.getString(R.string.name_earthmouse) -> { return BEAST.serialNumber + 9 }
+        App.getString(R.string.name_watermouse) -> { return BEAST.serialNumber + 10 }
+        App.getString(R.string.name_firemouse) -> { return BEAST.serialNumber + 11 }
+        App.getString(R.string.name_windmouse) -> { return BEAST.serialNumber + 12 }
+
         App.getString(R.string.name_libino) -> { return YANGIRO.serialNumber + 1}
         App.getString(R.string.name_yangiro) -> { return YANGIRO.serialNumber + 2}
         App.getString(R.string.name_banboro) -> { return YANGIRO.serialNumber + 3}

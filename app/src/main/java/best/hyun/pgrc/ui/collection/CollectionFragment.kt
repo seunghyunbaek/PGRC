@@ -355,6 +355,7 @@ class CollectionFragment : Fragment() {
         val dialog = builder.create()
         dialog.show()
     }
+
     inner class CollectionAdapter:RecyclerView.Adapter<CollectionAdapter.ViewHolder>() {
 
         override fun getItemCount(): Int = typePets.size

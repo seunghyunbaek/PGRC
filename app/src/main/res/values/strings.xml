@@ -22,6 +22,74 @@
     <string name="text_kind_pet">페트 류</string>
     <string name="hint_pet_name">페트 이름</string>
 
+    <string name="type_special">특수 계열</string>
+    <string name="name_laiby">라이비</string>
+    <string name="name_bokwoori">복우리</string>
+    <string name="name_fywable">파이와블</string>
+    <string name="name_peruru">페루루</string>
+    <string name="name_dorudoru">도르도르</string>
+    <string name="name_youngicedragon">어린아이스드래곤</string>
+    <string name="name_kau">카우</string>
+    <string name="name_hubaty">후바티</string>
+
+    <string name="route_laiby">이벤트 교환</string>
+    <string name="route_bokwoori">이벤트 교환</string>
+    <string name="route_fywable">이벤트 교환</string>
+    <string name="route_peruru">이벤트 교환</string>
+    <string name="route_dorudoru">이벤트 교환</string>
+    <string name="route_youngicedragon">이벤트 교환</string>
+    <string name="route_kau">이벤트 교환</string>
+    <string name="route_hubaty">이벤트 교환</string>
+
+    <string name="type_fourguardiangods">사신수 류</string>
+    <string name="name_whitetiger">백호</string>
+    <string name="name_redbird">주작</string>
+    <string name="name_blacktortoise">현무</string>
+    <string name="name_bluedragon">청룡</string>
+
+    <string name="route_whitetiger">이벤트 교환</string>
+    <string name="route_redbird">이벤트 교환</string>
+    <string name="route_blacktortoise">이벤트 교환</string>
+    <string name="route_bluedragon">이벤트 교환</string>
+
+    <string name="type_werewolf">늑대인간 류</string>
+    <string name="name_earthwerewolf">지늑인</string>
+    <string name="name_waterwerewolf">수늑인</string>
+    <string name="name_firewerewolf">화늑인</string>
+    <string name="name_windwerewolf">풍늑인</string>
+
+    <string name="route_earthwerewolf">이벤트 교환</string>
+    <string name="route_watewerewolf">이벤트 교환</string>
+    <string name="route_firewerewolf">이벤트 교환</string>
+    <string name="route_windwerewolf">이벤트 교환</string>
+
+    <string name="type_beast">짐승 류</string>
+    <string name="name_earthhorse">지말</string>
+    <string name="name_waterhorse">수말</string>
+    <string name="name_firehorse">화말</string>
+    <string name="name_windhorse">풍말</string>
+    <string name="name_mecawaterhorse">기계수말</string>
+    <string name="name_mecafirehorse">기계화말</string>
+    <string name="name_mecaearthhorse">기계지말</string>
+    <string name="name_mecawindhorse">기계풍말</string>
+    <string name="name_earthmouse">미도 야</string>
+    <string name="name_watermouse">밀로 트</string>
+    <string name="name_firemouse">미도</string>
+    <string name="name_windmouse">미니</string>
+
+    <string name="route_earthhorse">평판 스토어</string>
+    <string name="route_waterhorse">평판 스토어</string>
+    <string name="route_firehorse">평판 스토어</string>
+    <string name="route_windhorse">평판 스토어</string>
+    <string name="route_mecawaterhorse">애완 동물의 변화</string>
+    <string name="route_mecafirehorse">애완 동물의 변화</string>
+    <string name="route_mecaearthhorse">애완 동물의 변화</string>
+    <string name="route_mecawindhorse">애완 동물의 변화</string>
+    <string name="route_earthmouse">새해 이벤트</string>
+    <string name="route_watermouse">새해 이벤트</string>
+    <string name="route_firemouse">새해 이벤트</string>
+    <string name="route_windmouse">새해 이벤트</string>
+
     <string name="type_yangiro">얀기로 류</string>
     <string name="name_libino">리비노</string>
     <string name="name_yangiro">얀기로</string>
