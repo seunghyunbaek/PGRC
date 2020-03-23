@@ -26,14 +26,6 @@ class PetFactory {
         // 특정 페트 얻기
         fun getPet(petAbstractFactory: PetAbstractFactory) = petAbstractFactory.createPet()
 
-        // 모든 페트 얻기
-//        fun getAllPets() {
-//            val petTypeYangiro = arrayOf(Banboro(), Bangino(), Burudon(), Gibino(), Libino(), Yangiro())
-
-//            val allPets:ArrayList<Pet> = ArrayList()
-//            allPets.addAll(petTypeYangiro)
-//        }
-
         // 모든 페트 종류 얻기 ( ~~~류 )
         fun getPetTypes(): Array<PET_TYPE> = PET_TYPE.values()
 

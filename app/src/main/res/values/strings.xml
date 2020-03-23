@@ -5,8 +5,9 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="title_home">Home</string>
     <string name="title_collection">도감</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_calculation">계산기</string>
     <string name="title_dialog">페트 선택</string>
+    <string name="title_name">페트 이름</string>
 
     <string name="btn_server_ee">EE 서버</string>
 
@@ -21,6 +22,10 @@
     <string name="text_growth">성장률</string>
     <string name="text_kind_pet">페트 류</string>
     <string name="hint_pet_name">페트 이름</string>
+
+    <string name="text_init">초기</string>
+    <string name="text_now">현재</string>
+
 
     <string name="type_special">특수 계열</string>
     <string name="name_laiby">라이비</string>

@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraint_calculation"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusableInTouchMode="true">
+
+
+    <best.hyun.pgrc.PetTypeSpinner
+        android:id="@+id/spinner_kind_pet_calculation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/spinner_background"
+        android:overlapAnchor="false"
+        android:padding="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_name_calculation"
+        style="@style/text_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/title_name"
+        app:layout_constraintStart_toStartOf="@+id/spinner_kind_pet_calculation"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_kind_pet_calculation"
+        tools:text="@string/title_name" />
+
+    <TextView
+        android:id="@+id/text_main_elemental_calculation"
+        style="@style/text_elemental"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/text_name_calculation"
+        app:layout_constraintStart_toEndOf="@+id/text_name_calculation"
+        app:layout_constraintTop_toTopOf="@+id/text_name_calculation"
+        tools:text="火" />
+
+    <TextView
+        android:id="@+id/text_main_elemental_value_calculation"
+        style="@style/text_elemental"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/text_main_elemental_calculation"
+        app:layout_constraintTop_toTopOf="@+id/text_main_elemental_calculation"
+        tools:text="70" />
+
+    <TextView
+        android:id="@+id/text_sub_elemental_calculation"
+        style="@style/text_elemental"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toEndOf="@+id/text_main_elemental_value_calculation"
+        app:layout_constraintTop_toTopOf="@+id/text_main_elemental_value_calculation"
+        tools:text="水" />
+
+    <TextView
+        android:id="@+id/text_sub_elemental_value_calculation"
+        style="@style/text_elemental"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/text_sub_elemental_calculation"
+        app:layout_constraintStart_toEndOf="@+id/text_sub_elemental_calculation"
+        app:layout_constraintTop_toTopOf="@+id/text_sub_elemental_calculation"
+        tools:text="30" />
+
+    <TextView
+        android:id="@+id/text_init_calculation"
+        style="@style/text_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/text_init"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="@+id/text_name_calculation"
+        app:layout_constraintTop_toBottomOf="@+id/text_name_calculation" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/outline_initlv_calculation"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:hint="@string/text_lv"
+        android:textColorHint="#ff000000"
+        app:boxStrokeColor="@color/cardview_dark_background"
+        app:layout_constraintBottom_toBottomOf="@+id/text_init_calculation"
+        app:layout_constraintStart_toEndOf="@+id/text_init_calculation"
+        app:layout_constraintTop_toTopOf="@+id/text_init_calculation">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_initlv_calculation"
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:inputType="number"
+            android:maxLength="3"
+            android:textSize="14dp"
+            tools:text="1541" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/outline_inithp_calculation"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:hint="@string/text_hp"
+        android:textColorHint="#ff000000"
+        app:boxStrokeColor="@color/cardview_dark_background"
+        app:layout_constraintStart_toEndOf="@+id/outline_initlv_calculation"
+        app:layout_constraintTop_toTopOf="@+id/outline_initlv_calculation">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_inithp_calculation"
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:inputType="number"
+            android:maxLength="4"
+            android:textSize="14dp"
+            tools:text="1541" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/outline_initatk_calculation"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:hint="@string/text_atk"
+        android:textColorHint="#ff000000"
+        app:boxStrokeColor="@color/cardview_dark_background"
+        app:layout_constraintStart_toEndOf="@+id/outline_inithp_calculation"
+        app:layout_constraintTop_toTopOf="@+id/outline_inithp_calculation">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_initatk_calculation"
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:inputType="number"
+            android:maxLength="3"
+            android:textSize="14dp"
+            tools:text="1541" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/outline_initdef_calculation"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:hint="@string/text_def"
+        android:textColorHint="#ff000000"
+        app:boxStrokeColor="@color/cardview_dark_background"
+        app:layout_constraintStart_toEndOf="@+id/outline_initatk_calculation"
+        app:layout_constraintTop_toTopOf="@+id/outline_inithp_calculation">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_initdef_calculation"
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:inputType="number"
+            android:maxLength="3"
+            android:textSize="14dp"
+            tools:text="1541" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/outline_initspd_calculation"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:hint="@string/text_spd"
+        android:textColorHint="#ff000000"
+        app:boxStrokeColor="@color/cardview_dark_background"
+        app:layout_constraintStart_toEndOf="@+id/outline_initdef_calculation"
+        app:layout_constraintTop_toTopOf="@+id/outline_inithp_calculation">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_initspd_calculation"
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:inputType="number"
+            android:maxLength="3"
+            android:textSize="14dp"
+            tools:text="1541" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/text_now_calculation"
+        style="@style/text_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/text_now"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="@+id/text_name_calculation"
+        app:layout_constraintTop_toBottomOf="@+id/text_init_calculation" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/outline_nowlv_calculation"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:hint="@string/text_lv"
+        android:textColorHint="#ff000000"
+        app:boxStrokeColor="@color/cardview_dark_background"
+        app:layout_constraintBottom_toBottomOf="@+id/text_now_calculation"
+        app:layout_constraintStart_toEndOf="@+id/text_now_calculation"
+        app:layout_constraintTop_toTopOf="@+id/text_now_calculation">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_nowlv_calculation"
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:inputType="number"
+            android:maxLength="3"
+            android:textSize="14dp"
+            tools:text="1541" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/outline_nowhp_calculation"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:hint="@string/text_hp"
+        android:textColorHint="#ff000000"
+        app:boxStrokeColor="@color/cardview_dark_background"
+        app:layout_constraintStart_toEndOf="@+id/outline_nowlv_calculation"
+        app:layout_constraintTop_toTopOf="@+id/outline_nowlv_calculation">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_nowhp_calculation"
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:inputType="number"
+            android:maxLength="4"
+            android:textSize="14dp"
+            tools:text="1541" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/outline_nowatk_calculation"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:hint="@string/text_atk"
+        android:textColorHint="#ff000000"
+        app:boxStrokeColor="@color/cardview_dark_background"
+        app:layout_constraintStart_toEndOf="@+id/outline_nowhp_calculation"
+        app:layout_constraintTop_toTopOf="@+id/outline_nowhp_calculation">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_nowatk_calculation"
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:inputType="number"
+            android:maxLength="3"
+            android:textSize="14dp"
+            tools:text="1541" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/outline_nowdef_calculation"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:hint="@string/text_def"
+        android:textColorHint="#ff000000"
+        app:boxStrokeColor="@color/cardview_dark_background"
+        app:layout_constraintStart_toEndOf="@+id/outline_nowatk_calculation"
+        app:layout_constraintTop_toTopOf="@+id/outline_nowatk_calculation">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_nowdef_calculation"
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:inputType="number"
+            android:maxLength="3"
+            android:textSize="14dp"
+            tools:text="1541" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/outline_nowspd_calculation"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:hint="@string/text_spd"
+        android:textColorHint="#ff000000"
+        app:boxStrokeColor="@color/cardview_dark_background"
+        app:layout_constraintStart_toEndOf="@+id/outline_nowdef_calculation"
+        app:layout_constraintTop_toTopOf="@+id/outline_nowdef_calculation">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_nowspd_calculation"
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:inputType="number"
+            android:maxLength="3"
+            android:textSize="14dp"
+            tools:text="1541" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/text_pet_calculation"
+        style="@style/text_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:nestedScrollingEnabled="true"
+        android:singleLine="true"
+        android:text="@string/text_max"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="@id/text_now_calculation"
+        app:layout_constraintTop_toBottomOf="@id/text_now_calculation" />
+
+
+    <TextView
+        android:id="@+id/text_petgrowth_calculation"
+        style="@style/text_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/outline_nowlv_calculation"
+        app:layout_constraintStart_toStartOf="@+id/outline_nowlv_calculation"
+        app:layout_constraintTop_toTopOf="@id/text_pet_calculation"
+        tools:text="5.698" />
+
+    <TextView
+        android:id="@+id/text_pethp_calculation"
+        style="@style/text_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@id/outline_nowhp_calculation"
+        app:layout_constraintStart_toStartOf="@id/outline_nowhp_calculation"
+        app:layout_constraintTop_toTopOf="@id/text_pet_calculation"
+        tools:text="1541" />
+
+    <TextView
+        android:id="@+id/text_petatk_calculation"
+        style="@style/text_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@id/outline_nowatk_calculation"
+        app:layout_constraintStart_toStartOf="@id/outline_nowatk_calculation"
+        app:layout_constraintTop_toTopOf="@id/text_pet_calculation"
+        tools:text="154" />
+
+    <TextView
+        android:id="@+id/text_petdef_calculation"
+        style="@style/text_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@id/outline_nowdef_calculation"
+        app:layout_constraintStart_toStartOf="@id/outline_nowdef_calculation"
+        app:layout_constraintTop_toTopOf="@id/text_pet_calculation"
+        tools:text="154" />
+
+    <TextView
+        android:id="@+id/text_petspd_calculation"
+        style="@style/text_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@id/outline_nowspd_calculation"
+        app:layout_constraintStart_toStartOf="@id/outline_nowspd_calculation"
+        app:layout_constraintTop_toTopOf="@id/text_pet_calculation"
+        tools:text="155" />
+
+
+    <TextView
+        android:id="@+id/text_growth_calculation"
+        style="@style/text_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/text_growth"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/text_pet_calculation"
+        app:layout_constraintTop_toBottomOf="@id/text_pet_calculation" />
+
+    <TextView
+        android:id="@+id/text_growthtotal_calculation"
+        style="@style/text_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="@id/outline_nowlv_calculation"
+        app:layout_constraintStart_toStartOf="@id/outline_nowlv_calculation"
+        app:layout_constraintTop_toTopOf="@id/text_growth_calculation"
+        tools:text="5.698" />
+
+    <TextView
+        android:id="@+id/text_growthhp_calculation"
+        style="@style/text_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="@id/outline_nowhp_calculation"
+        app:layout_constraintStart_toStartOf="@id/outline_nowhp_calculation"
+        app:layout_constraintTop_toTopOf="@id/text_growth_calculation"
+        tools:text="12.545" />
+
+    <TextView
+        android:id="@+id/text_growthatk_calculation"
+        style="@style/text_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="@id/outline_nowatk_calculation"
+        app:layout_constraintStart_toStartOf="@id/outline_nowatk_calculation"
+        app:layout_constraintTop_toTopOf="@id/text_growth_calculation"
+        tools:text="5.505" />
+
+    <TextView
+        android:id="@+id/text_growthdef_calculation"
+        style="@style/text_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="@id/outline_nowdef_calculation"
+        app:layout_constraintStart_toStartOf="@id/outline_nowdef_calculation"
+        app:layout_constraintTop_toTopOf="@id/text_growth_calculation"
+        tools:text="5.505" />
+
+    <TextView
+        android:id="@+id/text_growthspd_calculation"
+        style="@style/text_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="@id/outline_nowspd_calculation"
+        app:layout_constraintStart_toStartOf="@id/outline_nowspd_calculation"
+        app:layout_constraintTop_toTopOf="@id/text_growth_calculation"
+        tools:text="5.505" />
+
+    <TextView
+        android:id="@+id/text_resultgrowth_calculation"
+        style="@style/text_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/text_growthtotal_calculation"
+        app:layout_constraintStart_toStartOf="@+id/text_growthtotal_calculation"
+        app:layout_constraintTop_toBottomOf="@id/text_growthtotal_calculation"
+        tools:text="5.698" />
+
+    <TextView
+        android:id="@+id/text_resulthp_calculation"
+        style="@style/text_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/text_growthhp_calculation"
+        app:layout_constraintStart_toStartOf="@+id/text_growthhp_calculation"
+        app:layout_constraintTop_toBottomOf="@id/text_growthhp_calculation"
+        tools:text="0.241" />
+
+    <TextView
+        android:id="@+id/text_resultatk_calculation"
+        style="@style/text_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/text_growthatk_calculation"
+        app:layout_constraintStart_toStartOf="@+id/text_growthatk_calculation"
+        app:layout_constraintTop_toTopOf="@id/text_resulthp_calculation"
+        tools:text="20.367" />
+
+    <TextView
+        android:id="@+id/text_resultdef_calculation"
+        style="@style/text_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/text_growthdef_calculation"
+        app:layout_constraintStart_toStartOf="@+id/text_growthdef_calculation"
+        app:layout_constraintTop_toTopOf="@id/text_resulthp_calculation"
+        tools:text="0.545" />
+
+    <TextView
+        android:id="@+id/text_resultspd_calculation"
+        style="@style/text_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/text_growthspd_calculation"
+        app:layout_constraintStart_toStartOf="@+id/text_growthspd_calculation"
+        app:layout_constraintTop_toTopOf="@id/text_resulthp_calculation"
+        tools:text="0.554" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_calculation"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:paddingBottom="64dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_resultgrowth_calculation" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

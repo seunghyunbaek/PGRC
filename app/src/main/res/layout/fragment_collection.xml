@@ -290,55 +290,12 @@
         app:layout_constraintTop_toBottomOf="@+id/text_spd_init_collection2"
         tools:text="전체+1" />
 
-
-    <!--    <TextView-->
-    <!--        android:id="@+id/text_growth_max_collection"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_marginStart="32dp"-->
-    <!--        app:layout_constraintStart_toEndOf="@+id/text_growth_min_collection"-->
-    <!--        app:layout_constraintTop_toTopOf="@+id/text_growth_min_collection"-->
-    <!--        tools:text="최대" />-->
-
-    <!--    <TextView-->
-    <!--        android:id="@+id/text_growth_max_hp_collection"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        app:layout_constraintStart_toStartOf="@+id/text_growth_max_collection"-->
-    <!--        app:layout_constraintTop_toTopOf="@+id/text_hp_init_collection2"-->
-    <!--        tools:text="피+10" />-->
-
-    <!--    <TextView-->
-    <!--        android:id="@+id/text_growth_max_atk_collection"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        app:layout_constraintStart_toStartOf="@+id/text_growth_max_collection"-->
-    <!--        app:layout_constraintTop_toTopOf="@+id/text_atk_max_collection"-->
-    <!--        tools:text="공+10" />-->
-
-    <!--    <TextView-->
-    <!--        android:id="@+id/text_growth_max_def_collection"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        app:layout_constraintStart_toStartOf="@+id/text_growth_max_collection"-->
-    <!--        app:layout_constraintTop_toTopOf="@+id/text_def_max_collection"-->
-    <!--        tools:text="방+10" />-->
-
-    <!--    <TextView-->
-    <!--        android:id="@+id/text_growth_max_spd_collection"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        app:layout_constraintStart_toStartOf="@+id/text_growth_max_collection"-->
-    <!--        app:layout_constraintTop_toTopOf="@+id/text_spd_max_collection"-->
-    <!--        tools:text="순+10" />-->
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_collection"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="32dp"
-        android:paddingBottom="16dp"
+        android:paddingBottom="64dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

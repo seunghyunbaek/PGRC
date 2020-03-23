@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="best.hyun.pgrc.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:name="best.hyun.pgrc.ui.calculation.CalculationFragment"
+        android:label="@string/title_calculation"
+        tools:layout="@layout/fragment_calculation" />
 </navigation>

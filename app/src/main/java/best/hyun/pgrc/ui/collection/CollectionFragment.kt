@@ -64,7 +64,6 @@ class CollectionFragment : Fragment() {
     private lateinit var petTypeList: Array<PET_TYPE>
     private lateinit var typePets:Array<Pet>
     private lateinit var typePetNames:Array<CharSequence>
-
     private lateinit var currentPet:Pet
 
     override fun onCreateView(
