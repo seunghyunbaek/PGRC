@@ -34,7 +34,7 @@
     <string name="name_peruru">페루루</string>
     <string name="name_dorudoru">도르도르</string>
     <string name="name_youngicedragon">어린아이스드래곤</string>
-    <string name="name_kau">카우</string>
+    <string name="name_kawoo">카우</string>
     <string name="name_hubaty">후바티</string>
 
     <string name="route_laiby">이벤트 교환</string>
@@ -43,7 +43,7 @@
     <string name="route_peruru">이벤트 교환</string>
     <string name="route_dorudoru">이벤트 교환</string>
     <string name="route_youngicedragon">이벤트 교환</string>
-    <string name="route_kau">이벤트 교환</string>
+    <string name="route_kawoo">이벤트 교환</string>
     <string name="route_hubaty">이벤트 교환</string>
 
     <string name="type_fourguardiangods">사신수 류</string>
@@ -142,5 +142,471 @@
     <string name="route_pooryong">이벤트 교환</string>
     <string name="route_jigaros">이벤트 교환</string>
     <string name="route_kalos">이벤트 교환</string>
+
+    <string name="type_samdusa">삼두사 류</string>
+    <string name="name_jidusa">지두사</string>
+    <string name="name_sudusa">수두사</string>
+    <string name="name_hwadusa">화두사</string>
+    <string name="name_poongdusa">풍두사</string>
+
+    <string name="route_jidusa">이벤트 교환</string>
+    <string name="route_sudusa">이벤트 교환</string>
+    <string name="route_hwadusa">이벤트 교환</string>
+    <string name="route_poongdusa">이벤트 교환</string>
+
+    <string name="type_hyubo">휴보 류</string>
+    <string name="name_hyubo">휴보</string>
+    <string name="name_pobo">포보</string>
+    <string name="name_kubo">쿠보</string>
+    <string name="name_torojya">토로쟈</string>
+    <string name="name_burubo">부르보</string>
+
+    <string name="route_hyubo">먹이숲, 카난의 황금페트</string>
+    <string name="route_pobo">포획처, 먹이숲</string>
+    <string name="route_kubo">먹이숲, 공룡박사 퀘스트</string>
+    <string name="route_torojya">포획처, 먹이숲</string>
+    <string name="route_burubo">포획처, 먹이숲</string>
+
+    <string name="type_bubi">부비 류</string>
+    <string name="name_bubi">부비</string>
+    <string name="name_goldbubi">골드부비</string>
+    <string name="name_bui">부이</string>
+    <string name="name_buibee">부이비</string>
+    <string name="name_kingbui">킹부이</string>
+
+    <string name="route_bubi">포획처</string>
+    <string name="route_goldbubi">퀴즈 삼형제</string>
+    <string name="route_bui">포획처</string>
+    <string name="route_buibee">포획처</string>
+    <string name="route_kingbubi">PK</string>
+
+    <string name="type_katarkas">카타르카스 류</string>
+    <string name="name_katarkas">카타르카스</string>
+    <string name="name_kukas">쿠카스</string>
+    <string name="name_korokas">코로카스</string>
+    <string name="name_logian">로기안</string>
+    <string name="name_lamgas">램가스</string>
+    <string name="name_aikas">아이카스</string>
+    <string name="name_kutas">쿠타스</string>
+    <string name="name_kargian">카르기안</string>
+
+    <string name="route_katarkas">카타르카스</string>
+    <string name="route_kukas">쿠카스</string>
+    <string name="route_korokas">코로카스</string>
+    <string name="route_logian">로기안</string>
+    <string name="route_lamgas">램가스</string>
+    <string name="route_aikas">아이카스</string>
+    <string name="route_kutas">쿠타스</string>
+    <string name="route_kargian">카르기안</string>
+
+    <string name="type_manmo">만모 류</string>
+    <string name="name_manmo">만모</string>
+    <string name="name_manmoru">만모르</string>
+    <string name="name_manmonas">만모나스</string>
+    <string name="name_manmoros">만모로스</string>
+
+    <string name="route_manmo">만모</string>
+    <string name="route_manmoru">만모르</string>
+    <string name="route_manmonas">만모나스</string>
+    <string name="route_manmoros">만모로스</string>
+
+    <string name="type_gigaros">기가로스 류</string>
+    <string name="name_gigaros">기가로스</string>
+    <string name="name_megaros">메가로스</string>
+    <string name="name_bitros">비트로스</string>
+    <string name="name_gagaros">가가로스</string>
+    <string name="name_teraros">테라로스</string>
+
+    <string name="route_gigaros">기가로스</string>
+    <string name="route_megaros">메가로스</string>
+    <string name="route_bitros">비트로스</string>
+    <string name="route_gagaros">가가로스</string>
+    <string name="route_teraros">테라로스</string>
+
+    <string name="type_snake">뱀류</string>
+    <string name="name_earthsnake">땅뱀</string>
+    <string name="name_watersnake">물뱀</string>
+    <string name="name_firesnake">불뱀</string>
+    <string name="name_windsnake">풍뱀</string>
+
+    <string name="route_earthsnake">땅 뱀</string>
+    <string name="route_watersnake">물 뱀</string>
+    <string name="route_firesnake">불 뱀</string>
+    <string name="route_windsnake">풍 뱀</string>
+
+    <string name="type_dog">강아지 류</string>
+    <string name="name_jimung">지멍</string>
+    <string name="name_mongmong">몽몽</string>
+    <string name="name_jindol">진돌</string>
+    <string name="name_mongdol">뭉돌</string>
+
+    <string name="route_jimung">지멍</string>
+    <string name="route_mongmong">몽몽</string>
+    <string name="route_jindol">진돌</string>
+    <string name="route_mongdol">뭉돌</string>
+
+    <string name="type_zyag">쟈그 류</string>
+    <string name="name_gobankes">고반케스</string>
+    <string name="name_zyagra">쟈그라</string>
+    <string name="name_zyag">쟈그</string>
+    <string name="name_panji">판지</string>
+    <string name="name_seokhwakes">석화케스</string>
+    <string name="name_pangra">판그라</string>
+    <string name="name_pang">판그</string>
+    <string name="name_zyahad">쟈하드</string>
+
+    <string name="route_gobankes">고반케스</string>
+    <string name="route_zyagra">쟈그라</string>
+    <string name="route_zyag">쟈그</string>
+    <string name="route_panji">판지</string>
+    <string name="route_seokhwakes">석화케스</string>
+    <string name="route_pangra">판그라</string>
+    <string name="route_pang">판그</string>
+    <string name="route_zyahad">쟈하드</string>
+
+    <string name="type_berga">베르가 류</string>
+    <string name="name_berga">베르가</string>
+    <string name="name_beruru">베루루</string>
+    <string name="name_gorugoru">고르고르</string>
+    <string name="name_norunoru">노르노르</string>
+
+    <string name="route_berga">베르가</string>
+    <string name="route_beruru">베루루</string>
+    <string name="route_gorugoru">고르고르</string>
+    <string name="route_norunoru">노르노르</string>
+
+    <string name="type_daino">다이노 류</string>
+    <string name="name_daino">다이노</string>
+    <string name="name_dainos">다이노스</string>
+    <string name="name_prakitos">프라키토스</string>
+    <string name="name_stentos">스텐토스</string>
+    <string name="name_pritos">프리토스</string>
+
+    <string name="route_daino">다이노</string>
+    <string name="route_dainos">다이노스</string>
+    <string name="route_prakitos">프라키토스</string>
+    <string name="route_stentos">스텐토스</string>
+    <string name="route_pritos">프리토스</string>
+
+    <string name="type_woopu2d">2D 우푸 류</string>
+    <string name="name_notutu2d">노투투</string>
+    <string name="name_popo2d">포포</string>
+    <string name="name_pututu2d">푸투투</string>
+    <string name="name_putu2d">푸투</string>
+
+    <string name="route_notutu2d">노투투</string>
+    <string name="route_popo2d">포포</string>
+    <string name="route_pututu2d">푸투투</string>
+    <string name="route_putu2d">푸투</string>
+
+    <string name="type_woopu">우푸 류</string>
+    <string name="name_pupu">푸푸</string>
+    <string name="name_woopu">우푸</string>
+    <string name="name_tutu">투투</string>
+    <string name="name_otutu">오투투</string>
+
+    <string name="route_pupu">푸푸</string>
+    <string name="route_woopu">우푸</string>
+    <string name="route_tutu">투투</string>
+    <string name="route_otutu">오투투</string>
+
+    <string name="type_dorabys">도라비스 류</string>
+    <string name="name_teragon">테라곤</string>
+    <string name="name_kargon">카르곤</string>
+    <string name="name_poibys">포이비스</string>
+    <string name="name_dorabys">도라비스</string>
+    <string name="name_putera">푸테라</string>
+
+    <string name="route_teragon">테라곤</string>
+    <string name="route_kargon">카르곤</string>
+    <string name="route_poibys">포이비스</string>
+    <string name="route_dorabys">도라비스</string>
+    <string name="route_putera">푸테라</string>
+
+    <string name="type_kukuru">쿠쿠르 류</string>
+    <string name="name_kuling">쿠링</string>
+    <string name="name_kukuru">쿠쿠르</string>
+    <string name="name_poling">포링</string>
+    <string name="name_liski">리스키</string>
+    <string name="name_noski">노스키</string>
+    <string name="name_laski">라스키</string>
+    <string name="name_whiteling">화이트링</string>
+    <string name="name_chocoling">초코링</string>
+    <string name="name_whiterabiit">백설토끼</string>
+
+    <string name="route_kuling">쿠링</string>
+    <string name="route_kukuru">쿠쿠르</string>
+    <string name="route_poling">포링</string>
+    <string name="route_liski">리스키</string>
+    <string name="route_noski">노스키</string>
+    <string name="route_laski">라스키</string>
+    <string name="route_whiteling">화이트링</string>
+    <string name="route_chocoling">초코링</string>
+    <string name="route_whiterabiit">백설토끼</string>
+
+    <string name="type_beron">베론 류</string>
+    <string name="name_beron">베론</string>
+    <string name="name_beroroku">베로로크</string>
+    <string name="name_beroboku">베로보크</string>
+    <string name="name_beropori">베로포리</string>
+    <string name="name_beronoku">베로노크</string>
+    <string name="name_beton">베톤</string>
+    <string name="name_benoturi">베노투리</string>
+    <string name="name_berobadu">베로바드</string>
+
+    <string name="route_beron">베론</string>
+    <string name="route_beroroku">베로로크</string>
+    <string name="route_beroboku">베로보크</string>
+    <string name="route_beropori">베로포리</string>
+    <string name="route_beronoku">베로노크</string>
+    <string name="route_beton">베톤</string>
+    <string name="route_benoturi">베노투리</string>
+    <string name="route_berobadu">베로바드</string>
+
+    <string name="type_gordon">고르돈 류</string>
+    <string name="name_gordon">고르돈</string>
+    <string name="name_giradon">기라돈</string>
+    <string name="name_turdon">투르돈</string>
+    <string name="name_gorgo">고르고</string>
+    <string name="name_gramgor">그램고르</string>
+    <string name="name_kinggor">킹고르</string>
+    <string name="name_goruba">고루바</string>
+    <string name="name_greengor">그린고르</string>
+
+    <string name="route_gordon">고르돈</string>
+    <string name="route_giradon">기라돈</string>
+    <string name="route_turdon">투르돈</string>
+    <string name="route_gorgo">고르고</string>
+    <string name="route_gramgor">그램고르</string>
+    <string name="route_kinggor">킹고르</string>
+    <string name="route_goruba">고루바</string>
+    <string name="route_greengor">그린고르</string>
+
+    <string name="type_negos">네고스 류</string>
+    <string name="name_agoa">아고아</string>
+    <string name="name_negos">네고스</string>
+    <string name="name_tarogon">타로곤</string>
+    <string name="name_dagos">다고스</string>
+    <string name="name_bokugon">보크곤</string>
+
+    <string name="route_agoa">아고아</string>
+    <string name="route_negos">네고스</string>
+    <string name="route_tarogon">타로곤</string>
+    <string name="route_dagos">다고스</string>
+    <string name="route_bokugon">보크곤</string>
+
+    <string name="type_mui">무이 류</string>
+    <string name="name_rui">루이</string>
+    <string name="name_mui">무이</string>
+    <string name="name_ssibos">씨보스</string>
+    <string name="name_tui">투이</string>
+    <string name="name_rubos">루보스</string>
+    <string name="name_nobos">노보스</string>
+
+    <string name="route_rui">루이</string>
+    <string name="route_mui">무이</string>
+    <string name="route_ssibos">씨보스</string>
+    <string name="route_tui">투이</string>
+    <string name="route_rubos">루보스</string>
+    <string name="route_nobos">노보스</string>
+
+    <string name="type_kkomi">꼬미 류</string>
+    <string name="name_kkomi">꼬미</string>
+    <string name="name_kkobi">꼬비</string>
+    <string name="name_kkobio">꼬비오</string>
+    <string name="name_kkokkobi">꼬꼬비</string>
+    <string name="name_pingkkomi">핑꼬미</string>
+    <string name="name_gooda">고오다</string>
+
+    <string name="route_kkomi">꼬미</string>
+    <string name="route_kkobi">꼬비</string>
+    <string name="route_kkobio">꼬비오</string>
+    <string name="route_kkokkobi">꼬꼬비</string>
+    <string name="route_pingkkomi">핑꼬미</string>
+    <string name="route_gooda">고오다</string>
+
+    <string name="type_kaku">카쿠 류</string>
+    <string name="name_kaku">카쿠</string>
+    <string name="name_baka">바카</string>
+    <string name="name_bau">바우</string>
+    <string name="name_kau">카우</string>
+
+    <string name="route_kaku">카쿠</string>
+    <string name="route_baka">바카</string>
+    <string name="route_bau">바우</string>
+    <string name="route_kau">카우</string>
+
+    <string name="type_nostoros">노스토로스 류</string>
+    <string name="name_barorokus">바로로크스</string>
+    <string name="name_lanberos">란베로스</string>
+    <string name="name_koritorus">코리토르스</string>
+    <string name="name_nostoros">노스토로스</string>
+    <string name="name_nororokus">노로로크스</string>
+    <string name="name_silbarokus">실바로크스</string>
+    <string name="name_dirorokus">디로로크스</string>
+    <string name="name_jinjutoros">진주토로스</string>
+
+    <string name="route_barorokus">바로로크스</string>
+    <string name="route_lanberos">란베로스</string>
+    <string name="route_koritorus">코리토르스</string>
+    <string name="route_nostoros">노스토로스</string>
+    <string name="route_nororokus">노로로크스</string>
+    <string name="route_silbarokus">실바로크스</string>
+    <string name="route_dirorokus">디로로크스</string>
+    <string name="route_jinjutoros">진주토로스</string>
+
+    <string name="type_tora">토라 류</string>
+    <string name="name_tora">토라</string>
+    <string name="name_perpe">페르페</string>
+    <string name="name_karpe">카르페</string>
+    <string name="name_syuwoo">슈우</string>
+    <string name="name_minis">미니스</string>
+
+    <string name="route_tora">토라</string>
+    <string name="route_perpe">페르페</string>
+    <string name="route_karpe">카르페</string>
+    <string name="route_syuwoo">슈우</string>
+    <string name="route_minis">미니스</string>
+
+    <string name="type_kaki">카키 류</string>
+    <string name="name_taki">타키</string>
+    <string name="name_kuku">쿠쿠</string>
+    <string name="name_horku">호르쿠</string>
+    <string name="name_kaki">카키</string>
+
+    <string name="route_taki">타키</string>
+    <string name="route_kuku">쿠쿠</string>
+    <string name="route_horku">호르쿠</string>
+    <string name="route_kaki">카키</string>
+
+    <string name="type_storaji">스토라지 류</string>
+    <string name="name_storaji">스토라지</string>
+    <string name="name_atoraji">아토라지</string>
+    <string name="name_arinos">아리노스</string>
+    <string name="name_dainoros">다이노로스</string>
+    <string name="name_darinos">다리노스</string>
+    <string name="name_tarnoros">타르노로스</string>
+    <string name="name_arinoros">아리노로스</string>
+    <string name="name_purnoros">푸르노로스</string>
+
+    <string name="route_storaji">스토라지</string>
+    <string name="route_atoraji">아토라지</string>
+    <string name="route_arinos">아리노스</string>
+    <string name="route_dainoros">다이노로스</string>
+    <string name="route_darinos">다리노스</string>
+    <string name="route_tarnoros">타르노로스</string>
+    <string name="route_arinoros">아리노로스</string>
+    <string name="route_purnoros">푸르노로스</string>
+
+    <string name="type_pentas">펜타스 류</string>
+    <string name="name_tanopus">타노프스</string>
+    <string name="name_notas">노타스</string>
+    <string name="name_kobals">코발스</string>
+    <string name="name_tarpus">타르프스</string>
+    <string name="name_torinopus">토리노프스</string>
+    <string name="name_pentas">펜타스</string>
+    <string name="name_torikera">토리케라</string>
+    <string name="name_toripus">토리프스</string>
+
+    <string name="route_tanopus">타노프스</string>
+    <string name="route_notas">노타스</string>
+    <string name="route_kobals">코발스</string>
+    <string name="route_tarpus">타르프스</string>
+    <string name="route_torinopus">토리노프스</string>
+    <string name="route_pentas">펜타스</string>
+    <string name="route_torikera">토리케라</string>
+    <string name="route_toripus">토리프스</string>
+
+    <string name="type_lagogo">라고고 류</string>
+    <string name="name_lagogo">라고고</string>
+    <string name="name_hubaba">후바바</string>
+    <string name="name_toruru">토루루</string>
+    <string name="name_luni">루니</string>
+
+    <string name="route_lagogo">라고고</string>
+    <string name="route_hubaba">후바바</string>
+    <string name="route_toruru">토루루</string>
+    <string name="route_luni">루니</string>
+
+    <string name="type_boogi">북이 류</string>
+    <string name="name_noboogi">노북이</string>
+    <string name="name_boogi">북이</string>
+    <string name="name_kkangboogi">깡북이</string>
+    <string name="name_dolboogi">돌북이</string>
+    <string name="name_mulboogi">물북이</string>
+    <string name="name_kkoboogi">꼬북이</string>
+    <string name="name_cheolboogi">철북이</string>
+    <string name="name_kingboogi">킹북이(자라북)</string>
+
+    <string name="route_noboogi">노북이</string>
+    <string name="route_boogi">북이</string>
+    <string name="route_kkangboogi">깡북이</string>
+    <string name="route_dolboogi">돌북이</string>
+    <string name="route_mulboogi">물북이</string>
+    <string name="route_kkoboogi">꼬북이</string>
+    <string name="route_cheolboogi">철북이</string>
+    <string name="route_kingboogi">킹북이</string>
+
+    <string name="type_doori">두리 류</string>
+    <string name="name_woori">우리</string>
+    <string name="name_doori">두리</string>
+    <string name="name_stainwoori">얼룩우리</string>
+
+    <string name="route_woori">우리</string>
+    <string name="route_doori">두리</string>
+    <string name="route_stainwoori">얼룩우리</string>
+
+    <string name="type_rare">희귀 계열</string>
+    <string name="name_paaran">파아란</string>
+    <string name="name_goruru">고루루</string>
+    <string name="name_kingkkomi">킹꼬미(자카카)</string>
+    <string name="name_morax">모라스</string>
+
+    <string name="route_paaran">파아란</string>
+    <string name="route_goruru">고루루</string>
+    <string name="route_kingkkomi">킹꼬미</string>
+    <string name="route_morax">모라스</string>
+
+    <string name="type_keibee">케이비 류</string>
+    <string name="name_kabit">카비트</string>
+    <string name="name_keibee">케이비</string>
+    <string name="name_kyuee">큐이</string>
+    <string name="name_goldkabit">골드 카비트</string>
+
+    <string name="route_kabit">카비트</string>
+    <string name="route_keibee">케이비</string>
+    <string name="route_kyuee">큐이</string>
+    <string name="route_goldkabit">골드 카비트</string>
+
+    <string name="type_monasipu">모나시프 류</string>
+    <string name="name_pwito">프이토</string>
+    <string name="name_monasipu">모나시프</string>
+    <string name="name_lanapu">라나프</string>
+    <string name="name_laihon">라이혼</string>
+    <string name="name_taihon">타이혼</string>
+
+    <string name="route_pwito">프이토</string>
+    <string name="route_monasipu">모나시프</string>
+    <string name="route_lanapu">라나프</string>
+    <string name="route_laihon">라이혼</string>
+    <string name="route_taihon">타이혼</string>
+
+    <string name="type_marabia">마라비아 류</string>
+    <string name="name_marabia">마라비아</string>
+
+    <string name="route_marabia">마라비아</string>
+
+    <string name="type_godsnake">뱀신 류</string>
+    <string name="name_bareme">바레메(지뱀신)</string>
+    <string name="name_burori">브로리(수뱀신)</string>
+    <string name="name_mameru">마메르(화뱀신)</string>
+    <string name="name_moyami">모야미(풍뱀신)</string>
+    <string name="name_blacksnake">흑뱀</string>
+
+    <string name="route_bareme">바레메(지뱀)</string>
+    <string name="route_burori">브로리(수뱀)</string>
+    <string name="route_mameru">마메르(화뱀)</string>
+    <string name="route_moyami">모야미(풍뱀)</string>
+    <string name="route_blacksnake">흑뱀</string>
 
 </resources>

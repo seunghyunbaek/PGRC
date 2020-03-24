@@ -12,12 +12,12 @@ class Kau: Pet() {
     override val serialnumber: Int
         get() = getSerialNumber(name)
     override val name: String
-        get() = App.getString(R.string.name_kau)
+        get() = App.getString(R.string.name_kawoo)
     override val type: PET_TYPE
         get() = PET_TYPE.SPECIAL
     override var reincarnation: Boolean = false
     override val getRoute: String
-        get() = App.getString(R.string.route_kau)
+        get() = App.getString(R.string.route_kawoo)
     override val mainElemental: ELEMENTAL
         get() = ELEMENTAL.EARTH
     override val subElemental: ELEMENTAL?
