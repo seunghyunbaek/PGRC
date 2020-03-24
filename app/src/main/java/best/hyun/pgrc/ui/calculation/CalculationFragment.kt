@@ -2,7 +2,6 @@ package best.hyun.pgrc.ui.calculation
 
 import android.app.Activity
 import android.app.AlertDialog
-import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -17,6 +16,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import best.hyun.pgrc.PetFactory
 import best.hyun.pgrc.R
 import best.hyun.pgrc.logd
 import best.hyun.pgrc.type.*

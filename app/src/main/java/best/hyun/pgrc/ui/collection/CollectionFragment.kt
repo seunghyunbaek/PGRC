@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import best.hyun.pgrc.App
+import best.hyun.pgrc.PetFactory
 import best.hyun.pgrc.R
 import best.hyun.pgrc.logd
 import best.hyun.pgrc.type.*

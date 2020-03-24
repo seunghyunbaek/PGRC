@@ -1,5 +1,7 @@
-package best.hyun.pgrc.type
+package best.hyun.pgrc
 
+import best.hyun.pgrc.type.PET_TYPE
+import best.hyun.pgrc.type.Pet
 import best.hyun.pgrc.type.beast.*
 import best.hyun.pgrc.type.fourguardiangods.BlackTortoise
 import best.hyun.pgrc.type.fourguardiangods.BlueDragon
@@ -13,13 +15,19 @@ import best.hyun.pgrc.type.werewolf.WaterWereWolf
 import best.hyun.pgrc.type.werewolf.WindWereWolf
 import best.hyun.pgrc.type.yangiro.*
 
-interface PetAbstractFactory { fun createPet():Pet }
-class BanboroFactory: PetAbstractFactory { override fun createPet(): Pet = Banboro() }
-class BanginoFactory: PetAbstractFactory { override fun createPet(): Pet = Bangino() }
-class BurudonFactory: PetAbstractFactory { override fun createPet(): Pet = Burudon() }
-class GibinoFactory: PetAbstractFactory { override fun createPet(): Pet = Gibino() }
-class LibinoFactory: PetAbstractFactory { override fun createPet(): Pet = Libino() }
-class YangiroFactory: PetAbstractFactory { override fun createPet(): Pet = Yangiro() }
+interface PetAbstractFactory { fun createPet(): Pet }
+class BanboroFactory:
+    PetAbstractFactory { override fun createPet(): Pet = Banboro() }
+class BanginoFactory:
+    PetAbstractFactory { override fun createPet(): Pet = Bangino() }
+class BurudonFactory:
+    PetAbstractFactory { override fun createPet(): Pet = Burudon() }
+class GibinoFactory:
+    PetAbstractFactory { override fun createPet(): Pet = Gibino() }
+class LibinoFactory:
+    PetAbstractFactory { override fun createPet(): Pet = Libino() }
+class YangiroFactory:
+    PetAbstractFactory { override fun createPet(): Pet = Yangiro() }
 
 class PetFactory {
     companion object {
@@ -39,7 +47,7 @@ class PetFactory {
         /* 페트 리스트 [End] */
 
         // 특정 타입 페트 얻기 ( ~류 페트 얻기: 얀기로, 반보로 )
-        fun getTypePets(type:PET_TYPE): Array<Pet> = when(type) {
+        fun getTypePets(type: PET_TYPE): Array<Pet> = when(type) {
             PET_TYPE.SPECIAL -> getSpecialPets()
             PET_TYPE.FOURGUARDIANSOGDS -> getFourguardiansgodPets()
             PET_TYPE.WEREWOLF -> getWereWolfPets()
@@ -49,16 +57,22 @@ class PetFactory {
         }
 
         // 특정 타입 페트류 이름 얻기 ( ~류 하위 페트 이름 얻기: 반보로, 얀기로 ... )
-        fun getTypePetNames(type:PET_TYPE): Array<CharSequence> {
+        fun getTypePetNames(type: PET_TYPE): Array<CharSequence> {
             var typePets:Array<Pet> = arrayOf()
 
             when(type) {
-                PET_TYPE.SPECIAL -> typePets = getSpecialPets()
-                PET_TYPE.FOURGUARDIANSOGDS -> typePets = getFourguardiansgodPets()
-                PET_TYPE.WEREWOLF -> typePets = getWereWolfPets()
-                PET_TYPE.BEAST -> typePets = getBeastPets()
-                PET_TYPE.YANGIRO -> typePets = getYangiroPets()
-                PET_TYPE.OGAROS -> typePets = getOgarosPets()
+                PET_TYPE.SPECIAL -> typePets =
+                    getSpecialPets()
+                PET_TYPE.FOURGUARDIANSOGDS -> typePets =
+                    getFourguardiansgodPets()
+                PET_TYPE.WEREWOLF -> typePets =
+                    getWereWolfPets()
+                PET_TYPE.BEAST -> typePets =
+                    getBeastPets()
+                PET_TYPE.YANGIRO -> typePets =
+                    getYangiroPets()
+                PET_TYPE.OGAROS -> typePets =
+                    getOgarosPets()
             }
 
             val typePetNames: ArrayList<CharSequence> = ArrayList()
