@@ -13,6 +13,7 @@ class SplashActivity : AppCompatActivity() {
 
         Handler().postDelayed({
             Intent(applicationContext, ServerActivity::class.java).let{ startActivity(it) }
+            finish()
         }, SPLASH_SHORT)
     }
 }

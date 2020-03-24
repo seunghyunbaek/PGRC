@@ -205,7 +205,7 @@ class CalculationFragment : Fragment() {
             }
         })
         calculationViewModel.subElemental.observe(this, Observer {
-            when(it) {
+            textSubElemental.text = when(it) {
                 ELEMENTAL.EARTH -> {
                     textSubElemental.setTextColor(ELEMENTAL_COLOR.EARTH.rgb)
                     textSubElementalValue.setTextColor(ELEMENTAL_COLOR.EARTH.rgb)

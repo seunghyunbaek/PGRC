@@ -15,7 +15,7 @@
         android:gravity="center"
         android:letterSpacing="0.2"
         android:text="@string/app_name"
-        android:textColor="#808080"
+        android:textColor="#FF080808"
         android:textSize="60dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,6 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_sub_name"
+        android:textColor="#FF080808"
         android:textSize="14dp"
         app:layout_constraintEnd_toEndOf="@+id/text_title_server"
         app:layout_constraintStart_toStartOf="@+id/text_title_server"
@@ -33,26 +34,29 @@
 
     <Button
         android:id="@+id/btn_ee_server"
-        android:layout_width="295dp"
-        android:layout_height="44dp"
+        style="@android:style/Widget.Material.Light.Button.Inset"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
         android:layout_marginTop="36dp"
         android:layout_marginEnd="60dp"
-        android:padding="4dp"
+        android:padding="16dp"
+        android:textColor="#FF080808"
         android:text="@string/btn_server_ee"
         android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-    <de.hdodenhof.circleimageview.CircleImageView
+    <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toEndOf="@+id/text_sub_title_server"
+        app:layout_constraintStart_toStartOf="@+id/text_sub_title_server"
         app:layout_constraintTop_toBottomOf="@+id/text_title_server"
-        android:src="@drawable/ic_launcher_foreground"/>
+        app:srcCompat="@drawable/ic_eggs" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

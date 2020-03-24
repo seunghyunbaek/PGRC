@@ -3,13 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_collection">
-
-    <fragment
-        android:id="@+id/navigation_home"
-        android:name="best.hyun.pgrc.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+    app:startDestination="@id/navigation_collection">
 
     <fragment
         android:id="@+id/navigation_collection"
@@ -18,7 +12,7 @@
         tools:layout="@layout/fragment_collection" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_calculation"
         android:name="best.hyun.pgrc.ui.calculation.CalculationFragment"
         android:label="@string/title_calculation"
         tools:layout="@layout/fragment_calculation" />
