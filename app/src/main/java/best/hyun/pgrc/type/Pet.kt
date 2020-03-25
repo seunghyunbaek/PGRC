@@ -35,7 +35,7 @@ enum class PET_TYPE(val serialNumber:Int, val typeName:String) {
     DAINO(1700, getString(R.string.type_daino)),
     WOOPU2D(1800, getString(R.string.type_woopu2d)),
     WOOPU(1900, getString(R.string.type_woopu2d)),
-    DORABIS(2000, getString(R.string.type_dorabys)),
+    DORABYS(2000, getString(R.string.type_dorabys)),
     KUKURU(2100, getString(R.string.type_kukuru)),
     BERON(2200, getString(R.string.type_beron)),
     GORDON(2300, getString(R.string.type_gordon)),
@@ -171,7 +171,7 @@ fun getSerialNumber(name:String) :Int {
         getString(R.string.name_panji) -> { return ZYAG.serialNumber + 4 }
         getString(R.string.name_seokhwakes) -> { return ZYAG.serialNumber + 5 }
         getString(R.string.name_pangra) -> { return ZYAG.serialNumber + 6 }
-        getString(R.string.name_pang) -> { return ZYAG.serialNumber + 7 }
+        getString(R.string.name_pangu) -> { return ZYAG.serialNumber + 7 }
         getString(R.string.name_zyahad) -> { return ZYAG.serialNumber + 8 }
 
         getString(R.string.name_berga) -> { return BERGA.serialNumber + 1 }
@@ -195,11 +195,11 @@ fun getSerialNumber(name:String) :Int {
         getString(R.string.name_tutu) -> { return WOOPU.serialNumber + 3 }
         getString(R.string.name_otutu) -> { return WOOPU.serialNumber + 4 }
 
-        getString(R.string.name_teragon) -> { return DORABIS.serialNumber + 1 }
-        getString(R.string.name_kargon) -> { return DORABIS.serialNumber + 2 }
-        getString(R.string.name_poibys) -> { return DORABIS.serialNumber + 3 }
-        getString(R.string.name_dorabys) -> { return DORABIS.serialNumber + 4 }
-        getString(R.string.name_putera) -> { return DORABIS.serialNumber + 5 }
+        getString(R.string.name_teragon) -> { return DORABYS.serialNumber + 1 }
+        getString(R.string.name_kargon) -> { return DORABYS.serialNumber + 2 }
+        getString(R.string.name_poibys) -> { return DORABYS.serialNumber + 3 }
+        getString(R.string.name_dorabys) -> { return DORABYS.serialNumber + 4 }
+        getString(R.string.name_putera) -> { return DORABYS.serialNumber + 5 }
 
         getString(R.string.name_kuling) -> { return KUKURU.serialNumber + 1 }
         getString(R.string.name_kukuru) -> { return KUKURU.serialNumber + 2 }
@@ -239,7 +239,7 @@ fun getSerialNumber(name:String) :Int {
         getString(R.string.name_mui) -> { return MUI.serialNumber + 2 }
         getString(R.string.name_ssibos) -> { return MUI.serialNumber + 3 }
         getString(R.string.name_tui) -> { return MUI.serialNumber + 4 }
-        getString(R.string.name_rubos) -> { return MUI.serialNumber + 5 }
+        getString(R.string.name_lubos) -> { return MUI.serialNumber + 5 }
         getString(R.string.name_nobos) -> { return MUI.serialNumber + 6 }
 
         getString(R.string.name_kkomi) -> { return KKOMI.serialNumber + 1 }
@@ -355,12 +355,13 @@ abstract class Pet() {
     abstract val subElementalValue:Int
 
     abstract val initLv:Int
+    abstract val maxLv:Int
+
     abstract val initLvMaxHp:Int
     abstract val initLvMaxAtk:Int
     abstract val initLvMaxDef:Int
-    abstract val initLvMaxSpd:Int
 
-    abstract val maxLv:Int
+    abstract val initLvMaxSpd:Int
     abstract val maxLvMaxHp:Int
     abstract val maxLvMaxAtk:Int
     abstract val maxLvMaxDef:Int

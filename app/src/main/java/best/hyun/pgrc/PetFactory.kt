@@ -38,7 +38,7 @@ class PetFactory {
         fun getPetTypes(): Array<PET_TYPE> = PET_TYPE.values()
 
         /* 페트 리스트 [Start] */
-        private fun getSpecialPets(): Array<Pet> = arrayOf(Laiby(), Bokwoori(), Fywable(), Peruru(), Dorudoru(), YongIceDragon(), Kau(), Hubaty())
+        private fun getSpecialPets(): Array<Pet> = arrayOf(Laiby(), Bokwoori(), Fywable(), Peruru(), Dorudoru(), YongIceDragon(), Kawoo(), Hubaty())
         private fun getFourguardiansgodPets(): Array<Pet> = arrayOf(WhiteTiger(), RedBird(), BlackTortoise(), BlueDragon())
         private fun getWereWolfPets():Array<Pet> = arrayOf(EarthWereWolf(), WaterWereWolf(), FireWereWolf(), WindWereWolf())
         private fun getBeastPets(): Array<Pet> = arrayOf(EarthHorse(), WaterHorse(), FireHorse(), WindHorse(), MecaEarthHorse(), MecaWaterHorse(), MecaFireHorse(), MecaWindHorse(), EarthMouse(), WaterMouse(), FireMouse(), WindMouse())
@@ -54,6 +54,7 @@ class PetFactory {
             PET_TYPE.BEAST -> getBeastPets()
             PET_TYPE.YANGIRO -> getYangiroPets()
             PET_TYPE.OGAROS -> getOgarosPets()
+            else -> { getYangiroPets() }
         }
 
         // 특정 타입 페트류 이름 얻기 ( ~류 하위 페트 이름 얻기: 반보로, 얀기로 ... )

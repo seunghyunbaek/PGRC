@@ -172,13 +172,13 @@
     <string name="name_goldbubi">골드부비</string>
     <string name="name_bui">부이</string>
     <string name="name_buibee">부이비</string>
-    <string name="name_kingbui">킹부이</string>
+    <string name="name_kingbui">킹부이(부이왕)</string>
 
     <string name="route_bubi">포획처</string>
     <string name="route_goldbubi">퀴즈 삼형제</string>
     <string name="route_bui">포획처</string>
     <string name="route_buibee">포획처</string>
-    <string name="route_kingbubi">PK</string>
+    <string name="route_kingbui">PK</string>
 
     <string name="type_katarkas">카타르카스 류</string>
     <string name="name_katarkas">카타르카스</string>
@@ -252,7 +252,7 @@
     <string name="name_panji">판지</string>
     <string name="name_seokhwakes">석화케스</string>
     <string name="name_pangra">판그라</string>
-    <string name="name_pang">판그</string>
+    <string name="name_pangu">판그</string>
     <string name="name_zyahad">쟈하드</string>
 
     <string name="route_gobankes">고반케스</string>
@@ -261,7 +261,7 @@
     <string name="route_panji">판지</string>
     <string name="route_seokhwakes">석화케스</string>
     <string name="route_pangra">판그라</string>
-    <string name="route_pang">판그</string>
+    <string name="route_pangu">판그</string>
     <string name="route_zyahad">쟈하드</string>
 
     <string name="type_berga">베르가 류</string>
@@ -400,14 +400,14 @@
     <string name="name_mui">무이</string>
     <string name="name_ssibos">씨보스</string>
     <string name="name_tui">투이</string>
-    <string name="name_rubos">루보스</string>
+    <string name="name_lubos">루보스</string>
     <string name="name_nobos">노보스</string>
 
     <string name="route_rui">루이</string>
     <string name="route_mui">무이</string>
     <string name="route_ssibos">씨보스</string>
     <string name="route_tui">투이</string>
-    <string name="route_rubos">루보스</string>
+    <string name="route_lubos">루보스</string>
     <string name="route_nobos">노보스</string>
 
     <string name="type_kkomi">꼬미 류</string>
@@ -601,12 +601,12 @@
     <string name="name_burori">브로리(수뱀신)</string>
     <string name="name_mameru">마메르(화뱀신)</string>
     <string name="name_moyami">모야미(풍뱀신)</string>
-    <string name="name_blacksnake">흑뱀</string>
+    <string name="name_blacksnake">흑뱀(흑뱀신)</string>
 
-    <string name="route_bareme">바레메(지뱀)</string>
-    <string name="route_burori">브로리(수뱀)</string>
-    <string name="route_mameru">마메르(화뱀)</string>
-    <string name="route_moyami">모야미(풍뱀)</string>
-    <string name="route_blacksnake">흑뱀</string>
+    <string name="route_bareme">바레메(지뱀신)</string>
+    <string name="route_burori">브로리(수뱀신)</string>
+    <string name="route_mameru">마메르(화뱀신)</string>
+    <string name="route_moyami">모야미(풍뱀신)</string>
+    <string name="route_blacksnake">흑뱀(흑뱀신)</string>
 
 </resources>
