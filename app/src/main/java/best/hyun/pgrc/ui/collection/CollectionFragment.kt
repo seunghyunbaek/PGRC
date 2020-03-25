@@ -2,6 +2,7 @@ package best.hyun.pgrc.ui.collection
 
 import android.app.AlertDialog
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,6 +18,8 @@ import best.hyun.pgrc.R
 import best.hyun.pgrc.logd
 import best.hyun.pgrc.type.*
 import best.hyun.pgrc.type.ELEMENTAL.*
+import com.google.android.gms.ads.*
+import kotlinx.android.synthetic.main.fragment_collection.*
 import kotlinx.android.synthetic.main.item_collection.view.*
 
 
@@ -29,6 +32,8 @@ class CollectionFragment : Fragment() {
     private val TAG = "CollectionFragment"
 
     private lateinit var collectionViewModel: CollectionViewModel
+
+    private lateinit var adViewContainer: FrameLayout
 
     private lateinit var spinner:Spinner
     private lateinit var textName: TextView
@@ -67,6 +72,26 @@ class CollectionFragment : Fragment() {
     private lateinit var typePetNames:Array<CharSequence>
     private lateinit var currentPet:Pet
 
+    private var initialLayoutComplete = false
+    private lateinit var adView:AdView
+
+    private val adSize:AdSize
+        get() {
+            val display = requireActivity().windowManager.defaultDisplay
+            val outMetrics = DisplayMetrics()
+            display.getMetrics(outMetrics)
+
+            val density = outMetrics.density
+
+            var adWidthPixels = adViewContainer.width.toFloat()
+            if(adWidthPixels == 0f) {
+                adWidthPixels = outMetrics.widthPixels.toFloat()
+            }
+
+            val adWidth = (adWidthPixels / density).toInt()
+            return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(requireContext(), adWidth)
+        }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -75,6 +100,18 @@ class CollectionFragment : Fragment() {
         collectionViewModel =
             ViewModelProviders.of(this).get(CollectionViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_collection, container, false)
+
+        MobileAds.initialize(requireContext()) {}
+        adView = AdView(requireContext())
+
+        adViewContainer = root.findViewById(R.id.adView_container_collection)
+        adViewContainer.addView(adView)
+        adViewContainer.viewTreeObserver.addOnGlobalLayoutListener {
+            if(!initialLayoutComplete) {
+                initialLayoutComplete = true
+                loadBanner()
+            }
+        }
 
         spinner = root.findViewById(R.id.edit_kind_pet_collection)
 
@@ -158,6 +195,29 @@ class CollectionFragment : Fragment() {
         setALLData(currentPet)
     }
 
+    override fun onPause() {
+        adView.pause()
+        super.onPause()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        adView.resume()
+    }
+
+    override fun onDestroy() {
+        adView.destroy()
+        super.onDestroy()
+    }
+
+
+    private fun loadBanner() {
+        adView.adUnitId = getString(R.string.banner_ad_unit_id_for_test)
+        adView.adSize = adSize
+
+        val adRequest = AdRequest.Builder().build()
+        adView.loadAd(adRequest)
+    }
 
     private fun setObserver() {
         collectionViewModel.name.observe(this, Observer { textName.text = it })

@@ -5,6 +5,7 @@ import android.app.AlertDialog
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,12 +21,18 @@ import best.hyun.pgrc.PetFactory
 import best.hyun.pgrc.R
 import best.hyun.pgrc.logd
 import best.hyun.pgrc.type.*
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdSize
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 import com.google.android.material.textfield.TextInputEditText
 import kotlinx.android.synthetic.main.item_collection.view.*
 
 class CalculationFragment : Fragment() {
 
     private val TAG = "CalculationFragment"
+
+    private lateinit var adViewContainer:FrameLayout
 
     private lateinit var calculationViewModel: CalculationViewModel
 
@@ -77,6 +84,27 @@ class CalculationFragment : Fragment() {
     private lateinit var typePetNames:Array<CharSequence>
     private lateinit var currentPet: Pet
 
+    private var initialLayoutComplete = false
+    private lateinit var adView: AdView
+
+    private val adSize: AdSize
+        get() {
+            val display = requireActivity().windowManager.defaultDisplay
+            val outMetrics = DisplayMetrics()
+            display.getMetrics(outMetrics)
+
+            val density = outMetrics.density
+
+            var adWidthPixels = adViewContainer.width.toFloat()
+            if(adWidthPixels == 0f) {
+                adWidthPixels = outMetrics.widthPixels.toFloat()
+            }
+
+            val adWidth = (adWidthPixels / density).toInt()
+            return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(requireContext(), adWidth)
+        }
+
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -85,7 +113,19 @@ class CalculationFragment : Fragment() {
         calculationViewModel = ViewModelProviders.of(this).get(CalculationViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_calculation, container, false)
 
+        MobileAds.initialize(requireContext()) {}
+        adView = AdView(requireContext())
+
         constraint = root.findViewById(R.id.constraint_calculation)
+
+        adViewContainer = root.findViewById(R.id.adView_container_calculation)
+        adViewContainer.addView(adView)
+        adViewContainer.viewTreeObserver.addOnGlobalLayoutListener {
+            if(!initialLayoutComplete) {
+                initialLayoutComplete = true
+                loadBanner()
+            }
+        }
 
         spinner = root.findViewById(R.id.spinner_kind_pet_calculation)
         textName = root.findViewById(R.id.text_name_calculation)
@@ -170,6 +210,30 @@ class CalculationFragment : Fragment() {
     override fun onDestroyView() {
         hideKeyBoard()
         super.onDestroyView()
+    }
+
+    override fun onPause() {
+        adView.pause()
+        super.onPause()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        adView.resume()
+    }
+
+    override fun onDestroy() {
+        adView.destroy()
+        super.onDestroy()
+    }
+
+
+    private fun loadBanner() {
+        adView.adUnitId = getString(R.string.banner_ad_unit_id_for_test)
+        adView.adSize = adSize
+
+        val adRequest = AdRequest.Builder().build()
+        adView.loadAd(adRequest)
     }
 
     private fun hideKeyBoard() {
