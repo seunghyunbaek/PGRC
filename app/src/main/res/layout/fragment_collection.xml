@@ -85,18 +85,18 @@
         style="@android:style/Widget.Material.Button.Inset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:padding="0dp"
         android:text="@string/text_all"
-        app:layout_constraintBottom_toBottomOf="@+id/text_name_collection"
-        app:layout_constraintEnd_toEndOf="@+id/edit_kind_pet_collection"
-        app:layout_constraintTop_toTopOf="@+id/text_name_collection" />
+        app:layout_constraintStart_toStartOf="@+id/text_spd_init_collection2"
+        app:layout_constraintTop_toBottomOf="@+id/text_spd_init_collection2" />
 
     <TextView
         android:id="@+id/text_lv_init_collection2"
         style="@style/text_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="24dp"
         android:text="@string/text_lv"
         app:layout_constraintStart_toStartOf="@+id/text_name_collection"
         app:layout_constraintTop_toBottomOf="@+id/text_name_collection"
@@ -301,13 +301,13 @@
         android:id="@+id/recycler_collection"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:paddingBottom="64dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_growth_min_all_collection"
+        app:layout_constraintTop_toBottomOf="@+id/btn_state_collection"
         app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
