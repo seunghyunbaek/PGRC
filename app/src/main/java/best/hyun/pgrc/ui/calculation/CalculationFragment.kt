@@ -21,6 +21,7 @@ import best.hyun.pgrc.PetFactory
 import best.hyun.pgrc.R
 import best.hyun.pgrc.logd
 import best.hyun.pgrc.type.*
+import best.hyun.pgrc.type.yangiro.Yangiro
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdSize
 import com.google.android.gms.ads.AdView
@@ -180,9 +181,9 @@ class CalculationFragment : Fragment() {
         setTextChangedListener()
 
         petTypeList = PetFactory.getPetTypes()
-        typePets = PetFactory.getTypePets(petTypeList[0])
-        typePetNames = PetFactory.getTypePetNames(petTypeList[0])
-        currentPet = typePets[0]
+        typePets = PetFactory.getTypePets(petTypeList[4])
+        typePetNames = PetFactory.getTypePetNames(petTypeList[4])
+        currentPet = typePets[1]
 
         recycler.adapter = CalculationAdapter()
         recycler.layoutManager = GridLayoutManager(requireContext(), 3)
@@ -229,7 +230,7 @@ class CalculationFragment : Fragment() {
 
 
     private fun loadBanner() {
-        adView.adUnitId = getString(R.string.banner_ad_unit_id_for_test)
+        adView.adUnitId = getString(R.string.banner_ad_unit_id)
         adView.adSize = adSize
 
         val adRequest = AdRequest.Builder().build()

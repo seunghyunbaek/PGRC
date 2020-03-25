@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:text="@string/app_sub_name"
         android:textColor="#FF080808"
-        android:textSize="14dp"
+        android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="@+id/text_title_server"
         app:layout_constraintStart_toStartOf="@+id/text_title_server"
         app:layout_constraintTop_toBottomOf="@+id/text_title_server" />

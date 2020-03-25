@@ -212,7 +212,7 @@ class CollectionFragment : Fragment() {
 
 
     private fun loadBanner() {
-        adView.adUnitId = getString(R.string.banner_ad_unit_id_for_test)
+        adView.adUnitId = getString(R.string.banner_ad_unit_id)
         adView.adSize = adSize
 
         val adRequest = AdRequest.Builder().build()
