@@ -181,9 +181,9 @@ class CalculationFragment : Fragment() {
         setTextChangedListener()
 
         petTypeList = PetFactory.getPetTypes()
-        typePets = PetFactory.getTypePets(petTypeList[4])
-        typePetNames = PetFactory.getTypePetNames(petTypeList[4])
-        currentPet = typePets[1]
+        typePets = PetFactory.getTypePets(petTypeList[0])
+        typePetNames = PetFactory.getTypePetNames(petTypeList[0])
+        currentPet = typePets[0]
 
         recycler.adapter = CalculationAdapter()
         recycler.layoutManager = GridLayoutManager(requireContext(), 3)

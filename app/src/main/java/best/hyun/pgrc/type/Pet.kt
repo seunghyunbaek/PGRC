@@ -338,7 +338,6 @@ fun getSerialNumber(name:String) :Int {
     }
 }
 
-// 도감 : 이름, 종류, 환생, 획득방법, 메인속성, 서브속성, 메인속성값, 서브속성값, 1렙 최대값, maxLv최대값, 최대전체성장률, 최소 전체 성장률, 최대 각 스탯 성장률, 1렙 최소값, maxLv 최소값, 최소 각 스탯 성장률
 abstract class Pet() {
 
     abstract val serialnumber:Int

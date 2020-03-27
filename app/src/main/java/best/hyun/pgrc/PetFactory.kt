@@ -87,125 +87,303 @@ import best.hyun.pgrc.type.woopu2d.Pututu2D
 import best.hyun.pgrc.type.yangiro.*
 import best.hyun.pgrc.type.zyag.*
 
-interface PetAbstractFactory { fun createPet(): Pet }
-class BanboroFactory:
-    PetAbstractFactory { override fun createPet(): Pet = Banboro() }
-class BanginoFactory:
-    PetAbstractFactory { override fun createPet(): Pet = Bangino() }
-class BurudonFactory:
-    PetAbstractFactory { override fun createPet(): Pet = Burudon() }
-class GibinoFactory:
-    PetAbstractFactory { override fun createPet(): Pet = Gibino() }
-class LibinoFactory:
-    PetAbstractFactory { override fun createPet(): Pet = Libino() }
-class YangiroFactory:
-    PetAbstractFactory { override fun createPet(): Pet = Yangiro() }
+interface PetAbstractFactory { fun createPetArray(): Array<Pet> }
+
+private class SpecialFactory: PetAbstractFactory {
+    override fun createPetArray(): Array<Pet> {
+        return arrayOf(Laiby(), Bokwoori(), Fywable(), Peruru(), Dorudoru(), YongIceDragon(), Kawoo(), Hubaty())
+    }
+}
+
+private class FourGuardiansGodFactory: PetAbstractFactory {
+    override fun createPetArray(): Array<Pet> {
+        return arrayOf(WhiteTiger(), RedBird(), BlackTortoise(), BlueDragon())
+    }
+}
+
+private class WereWolfPetFactory: PetAbstractFactory {
+    override fun createPetArray(): Array<Pet> {
+        return arrayOf(EarthWereWolf(), WaterWereWolf(), FireWereWolf(), WindWereWolf())
+    }
+}
+
+private class BeastFactory: PetAbstractFactory {
+    override fun createPetArray(): Array<Pet> {
+        return arrayOf(EarthHorse(), WaterHorse(), FireHorse(), WindHorse(), MecaEarthHorse(), MecaWaterHorse(), MecaFireHorse(), MecaWindHorse(), EarthMouse(), WaterMouse(), FireMouse(), WindMouse())
+    }
+}
+
+private class YangiroFactory: PetAbstractFactory {
+    override fun createPetArray(): Array<Pet> {
+        return arrayOf(Libino(), Yangiro(), Banboro(), Bangino(), Burudon(), Gibino(), Bino(), Giro(), Boro(), Gino(), Rudon(), Ssagat(), Teinos())
+    }
+}
+
+private class OgarosFactory: PetAbstractFactory {
+    override fun createPetArray(): Array<Pet> {
+        return arrayOf(Ogaros(), Orgon(), Mogaros(), Golos(), Norgon(), Pooryong(), Jigaros(), Kalos())
+    }
+}
+
+private class SamdusaFactory: PetAbstractFactory {
+    override fun createPetArray(): Array<Pet> {
+        return arrayOf(Jidusa(), Sudusa(), Hwadusa(), Poongdusa())
+    }
+}
+
+private class HyuboFactory: PetAbstractFactory {
+    override fun createPetArray(): Array<Pet> {
+        return arrayOf(Hyubo(), Pobo(), Kubo(), Torozya(), Burubo())
+    }
+}
+
+private class BubiFactory: PetAbstractFactory {
+    override fun createPetArray(): Array<Pet> {
+        return arrayOf(Bubi(), GoldBubi(), Bui(), Buibee(), KingBui())
+    }
+}
+
+private class KatarkasFactory: PetAbstractFactory {
+    override fun createPetArray(): Array<Pet> {
+        return arrayOf(Katarkas(), Kukas(), Korokas(), Logian(), Lamgas(), Aikas(), Kutas(), Kargian())
+    }
+}
+
+private class ManmoFactory: PetAbstractFactory {
+    override fun createPetArray(): Array<Pet> {
+        return arrayOf(Manmo(), Manmoru(), Manmonas(), Manmoros())
+    }
+}
+
+private class GigarosFactory: PetAbstractFactory {
+    override fun createPetArray(): Array<Pet> {
+        return arrayOf(Gigaros(), Megaros(), Bitros(), Gagaros(), Teraros())
+    }
+}
+
+private class SnakeFactory: PetAbstractFactory {
+    override fun createPetArray(): Array<Pet> {
+        return arrayOf(EarthSnake(), WaterSnake(), FireSnake(), WindSnake())
+    }
+}
+
+private class DogFactory: PetAbstractFactory {
+    override fun createPetArray(): Array<Pet> {
+        return arrayOf(Jimung(), MongMong(), Jindol(), Mongdol())
+    }
+}
+
+private class ZyagFactory: PetAbstractFactory {
+    override fun createPetArray(): Array<Pet> {
+        return arrayOf(Gobankes(), Zyagra(), Zyag(), Panji(), Seokhwakes(), Pangra(), Pangu(), Zyahad())
+    }
+}
+
+private class BergaFactory: PetAbstractFactory {
+    override fun createPetArray(): Array<Pet> {
+        return arrayOf(Berga(), Beruru(), Gorugoru(), Norunoru())
+    }
+}
+
+private class DainoFactory: PetAbstractFactory {
+    override fun createPetArray(): Array<Pet> {
+        return arrayOf(Daino(), Dainos(), Prakitos(), Stentos(), Pritos())
+    }
+}
+
+private class Woopu2DFactory: PetAbstractFactory {
+    override fun createPetArray(): Array<Pet> {
+        return arrayOf(Notutu2D(), Popo2D(), Pututu2D(), Putu2D())
+    }
+}
+
+private class WoopuFactory: PetAbstractFactory {
+    override fun createPetArray(): Array<Pet> {
+        return arrayOf(Pupu(), Woopu(), Tutu(), Otutu())
+    }
+}
+
+private class DorabysFactory: PetAbstractFactory {
+    override fun createPetArray(): Array<Pet> {
+        return arrayOf(Teragon(), Kargon(), Poibys(), Dorabys(), Putera())
+    }
+}
+
+private class KukuruFactory: PetAbstractFactory {
+    override fun createPetArray(): Array<Pet> {
+        return arrayOf(Kuling(), Kukuru(), Poling(), Liski(), Noski(), Laski(), WhiteLing(), Chocoling(), WhiteRabbit())
+    }
+}
+
+private class BeronFactory: PetAbstractFactory {
+    override fun createPetArray(): Array<Pet> {
+        return arrayOf(Beron(), Beroroku(), Beroboku(), Beropori(), Beronoku(), Beton(), Benoturi(), Berobadu())
+    }
+}
+
+private class GordonFactory: PetAbstractFactory {
+    override fun createPetArray(): Array<Pet> {
+        return arrayOf(Gordon(), Giradon(), Turdon(), Gorgo(), Gramgor(), Kinggor(), Goruba(), Greengor())
+    }
+}
+
+private class NegosFactory: PetAbstractFactory {
+    override fun createPetArray(): Array<Pet> {
+        return arrayOf(Agoa(), Negos(), Tarogon(), Dagos(), Bokugon())
+    }
+}
+
+private class MuiFactory: PetAbstractFactory {
+    override fun createPetArray(): Array<Pet> {
+        return arrayOf(Rui(), Mui(), Ssibos(), Tui(), Lubos(), Nobos())
+    }
+}
+
+private class KkomiFactory: PetAbstractFactory {
+    override fun createPetArray(): Array<Pet> {
+        return arrayOf(Kkomi(), Kkobi(), Kkobio(), Kkokkobi(), Pingkkomi(), Gooda())
+    }
+}
+
+private class KakuFactory: PetAbstractFactory {
+    override fun createPetArray(): Array<Pet> {
+        return arrayOf(Kaku(), Baka(), Bau(), Kau())
+    }
+}
+
+private class NostorosFactory: PetAbstractFactory {
+    override fun createPetArray(): Array<Pet> {
+        return arrayOf(Barorokus(), Lanberos(), Koritorus(), Nostoros(), Nororokus(), Silbarokus(), Dirorokus(), Jinjutoros())
+    }
+}
+
+private class ToraFactory: PetAbstractFactory {
+    override fun createPetArray(): Array<Pet> {
+        return arrayOf(Tora(), Perpe(), Karpe(), Syuwoo(), Minis())
+    }
+}
+
+private class KakiFactory: PetAbstractFactory {
+    override fun createPetArray(): Array<Pet> {
+        return arrayOf(Taki(), Kuku(), Horku(), Kaki())
+    }
+}
+
+private class StorajiFactory: PetAbstractFactory {
+    override fun createPetArray(): Array<Pet> {
+        return arrayOf(Storaji(), Atoraji(), Arinoros(), Dainoros(), Darinos(), Tarnoros(), Arinoros(), Purnoros())
+    }
+}
+
+private class PentasFactory: PetAbstractFactory {
+    override fun createPetArray(): Array<Pet> {
+        return arrayOf(Tanopus(), Notas(), Kobals(), Tarpus(), Torinopus(), Pentas(), Torikera(), Toripus())
+    }
+}
+
+private class LagogoFactory: PetAbstractFactory {
+    override fun createPetArray(): Array<Pet> {
+        return arrayOf(Lagogo(), Hubaba(), Toruru(), Luni())
+    }
+}
+
+private class BoogiFactory: PetAbstractFactory {
+    override fun createPetArray(): Array<Pet> {
+        return arrayOf(Noboogi(), Boogi(), Kkangboogi(), Dolboogi(), Mulboogi(), Kkoboogi(), Cheolboogi(), Kingboogi())
+    }
+}
+
+private class DooriFactory: PetAbstractFactory {
+    override fun createPetArray(): Array<Pet> {
+        return arrayOf(Woori(), Doori(), Stainwoori())
+    }
+}
+
+private class RareFactory: PetAbstractFactory {
+    override fun createPetArray(): Array<Pet> {
+        return arrayOf(Paaran(), Goruru(), Kingkkomi(), Morax())
+    }
+}
+
+private class KeibeeFactory: PetAbstractFactory {
+    override fun createPetArray(): Array<Pet> {
+        return arrayOf(Kabit(), Keibee(), Kyuee(), Goldkabit())
+    }
+}
+
+private class MonasipuFactory: PetAbstractFactory {
+    override fun createPetArray(): Array<Pet> {
+        return arrayOf(Pwito(), Monasipu(), Lanapu(), Laihon(), Taihon())
+    }
+}
+
+private class MarabiaFactory: PetAbstractFactory {
+    override fun createPetArray(): Array<Pet> {
+        return arrayOf(Marabia())
+    }
+}
+
+private class GodSnakeFactory: PetAbstractFactory {
+    override fun createPetArray(): Array<Pet> {
+        return arrayOf(Bareme(), Burori(), Mameru(), Moyami(), Blacksnake())
+    }
+}
 
 class PetFactory {
     companion object {
-        // 특정 페트 얻기
-        fun getPet(petAbstractFactory: PetAbstractFactory) = petAbstractFactory.createPet()
-
-        // 모든 페트 종류 얻기 ( ~~~류 )
+        // 모든 페트 종류(타입) 얻기 ( ~~~류 )
         fun getPetTypes(): Array<PET_TYPE> = PET_TYPE.values()
 
-        /* 페트 리스트 [Start] */
-        private fun getSpecialPets(): Array<Pet> = arrayOf(Laiby(), Bokwoori(), Fywable(), Peruru(), Dorudoru(), YongIceDragon(), Kawoo(), Hubaty())
-        private fun getFourguardiansgodPets(): Array<Pet> = arrayOf(WhiteTiger(), RedBird(), BlackTortoise(), BlueDragon())
-        private fun getWereWolfPets():Array<Pet> = arrayOf(EarthWereWolf(), WaterWereWolf(), FireWereWolf(), WindWereWolf())
-        private fun getBeastPets(): Array<Pet> = arrayOf(EarthHorse(), WaterHorse(), FireHorse(), WindHorse(), MecaEarthHorse(), MecaWaterHorse(), MecaFireHorse(), MecaWindHorse(), EarthMouse(), WaterMouse(), FireMouse(), WindMouse())
-        private fun getYangiroPets(): Array<Pet> = arrayOf(Libino(), Yangiro(), Banboro(), Bangino(), Burudon(), Gibino(), Bino(), Giro(), Boro(), Gino(), Rudon(), Ssagat(), Teinos())
-        private fun getOgarosPets(): Array<Pet> = arrayOf(Ogaros(), Orgon(), Mogaros(), Golos(), Norgon(), Pooryong(), Jigaros(), Kalos())
-        private fun getSamdusaPets(): Array<Pet> = arrayOf(Jidusa(), Sudusa(), Hwadusa(), Poongdusa())
-        private fun getHyuboPets(): Array<Pet> = arrayOf(Hyubo(), Pobo(), Kubo(), Torozya(), Burubo())
-        private fun getBubiPets(): Array<Pet> = arrayOf(Bubi(), GoldBubi(), Bui(), Buibee(), KingBui())
-        private fun getKatarkasPets(): Array<Pet> = arrayOf(Katarkas(), Kukas(), Korokas(), Logian(), Lamgas(), Aikas(), Kutas(), Kargian())
-        private fun getManmoPets(): Array<Pet> = arrayOf(Manmo(), Manmoru(), Manmonas(), Manmoros())
-        private fun getGigarosPets(): Array<Pet> = arrayOf(Gigaros(), Megaros(), Bitros(), Gagaros(), Teraros())
-        private fun getSnakePets(): Array<Pet> = arrayOf(EarthSnake(), WaterSnake(), FireSnake(), WindSnake())
-        private fun getDogPets(): Array<Pet> = arrayOf(Jimung(), MongMong(), Jindol(), Mongdol())
-        private fun getZyagPets(): Array<Pet> = arrayOf(Gobankes(), Zyagra(), Zyag(), Panji(), Seokhwakes(), Pangra(), Pangu(), Zyahad())
-        private fun getBergaPets(): Array<Pet> = arrayOf(Berga(), Beruru(), Gorugoru(), Norunoru())
-        private fun getDainoPets(): Array<Pet> = arrayOf(Daino(), Dainos(), Prakitos(), Stentos(), Pritos())
-        private fun getWoopu2DPets(): Array<Pet> = arrayOf(Notutu2D(), Popo2D(), Pututu2D(), Putu2D())
-        private fun getWoopuPets(): Array<Pet> = arrayOf(Pupu(), Woopu(), Tutu(), Otutu())
-        private fun getDorabysPets(): Array<Pet> = arrayOf(Teragon(), Kargon(), Poibys(), Dorabys(), Putera())
-        private fun getKukuruPets(): Array<Pet> = arrayOf(Kuling(), Kukuru(), Poling(), Liski(), Noski(), Laski(), WhiteLing(), Chocoling(), WhiteRabbit())
-        private fun getBeronPets(): Array<Pet> = arrayOf(Beron(), Beroroku(), Beroboku(), Beropori(), Beronoku(), Beton(), Benoturi(), Berobadu())
-        private fun getGordonPets(): Array<Pet> = arrayOf(Gordon(), Giradon(), Turdon(), Gorgo(), Gramgor(), Kinggor(), Goruba(), Greengor())
-        private fun getNegoPets(): Array<Pet> = arrayOf(Agoa(), Negos(), Tarogon(), Dagos(), Bokugon())
-        private fun getMuiPets(): Array<Pet> = arrayOf(Rui(), Mui(), Ssibos(), Tui(), Lubos(), Nobos())
-        private fun getKkomiPets(): Array<Pet> = arrayOf(Kkomi(), Kkobi(), Kkobio(), Kkokkobi(), Pingkkomi(), Gooda())
-        private fun getKakuPets(): Array<Pet> = arrayOf(Kaku(), Baka(), Bau(), Kau())
-        private fun getNostorosPets(): Array<Pet> = arrayOf(Barorokus(), Lanberos(), Koritorus(), Nostoros(), Nororokus(), Silbarokus(), Dirorokus(), Jinjutoros())
-        private fun getToraPets(): Array<Pet> = arrayOf(Tora(), Perpe(), Karpe(), Syuwoo(), Minis())
-        private fun getKakiPets(): Array<Pet> = arrayOf(Taki(), Kuku(), Horku(), Kaki())
-        private fun getStorajiPets(): Array<Pet> = arrayOf(Storaji(), Atoraji(), Arinoros(), Dainoros(), Darinos(), Tarnoros(), Arinoros(), Purnoros())
-        private fun getPentasPets(): Array<Pet> = arrayOf(Tanopus(), Notas(), Kobals(), Tarpus(), Torinopus(), Pentas(), Torikera(), Toripus())
-        private fun getLagogoPets(): Array<Pet> = arrayOf(Lagogo(), Hubaba(), Toruru(), Luni())
-        private fun getBoogiPets(): Array<Pet> = arrayOf(Noboogi(), Boogi(), Kkangboogi(), Dolboogi(), Mulboogi(), Kkoboogi(), Cheolboogi(), Kingboogi())
-        private fun getDooriPets(): Array<Pet> = arrayOf(Woori(), Doori(), Stainwoori())
-        private fun getRarePets(): Array<Pet> = arrayOf(Paaran(), Goruru(), Kingkkomi(), Morax())
-        private fun getKeibeePets(): Array<Pet> = arrayOf(Kabit(), Keibee(), Kyuee(), Goldkabit())
-        private fun getMonasipuPets(): Array<Pet> = arrayOf(Pwito(), Monasipu(), Lanapu(), Laihon(), Taihon())
-        private fun getMarabiaPets(): Array<Pet> = arrayOf(Marabia())
-        private fun getGodSnakePets(): Array<Pet> = arrayOf(Bareme(), Burori(), Mameru(), Moyami(), Blacksnake())
-        /* 페트 리스트 [End] */
+        fun getPetArray(petAbstractFactory: PetAbstractFactory) : Array<Pet> {
+            return petAbstractFactory.createPetArray()
+        }
 
         // 특정 타입 페트 얻기 ( ~류 페트 얻기: 얀기로, 반보로 )
         fun getTypePets(type: PET_TYPE): Array<Pet> = when(type) {
-            PET_TYPE.SPECIAL -> getSpecialPets()
-            PET_TYPE.FOURGUARDIANSOGDS -> getFourguardiansgodPets()
-            PET_TYPE.WEREWOLF -> getWereWolfPets()
-            PET_TYPE.BEAST -> getBeastPets()
-            PET_TYPE.YANGIRO -> getYangiroPets()
-            PET_TYPE.OGAROS -> getOgarosPets()
-            PET_TYPE.SAMDUSA -> getSamdusaPets()
-            PET_TYPE.HYUBO -> getHyuboPets()
-            PET_TYPE.BUBI -> getBubiPets()
-            PET_TYPE.KATARKAS -> getKatarkasPets()
-            PET_TYPE.MANMO -> getManmoPets()
-            PET_TYPE.GIGAROS -> getGigarosPets()
-            PET_TYPE.SNAKE -> getSnakePets()
-            PET_TYPE.DOG -> getDogPets()
-            PET_TYPE.ZYAG -> getZyagPets()
-            PET_TYPE.BERGA -> getBergaPets()
-            PET_TYPE.DAINO -> getDainoPets()
-            PET_TYPE.WOOPU2D -> getWoopu2DPets()
-            PET_TYPE.WOOPU -> getWoopuPets()
-            PET_TYPE.DORABYS -> getDorabysPets()
-            PET_TYPE.KUKURU -> getKukuruPets()
-            PET_TYPE.BERON -> getBeronPets()
-            PET_TYPE.GORDON -> getGordonPets()
-            PET_TYPE.NEGOS -> getNegoPets()
-            PET_TYPE.MUI -> getMuiPets()
-            PET_TYPE.KKOMI -> getKkomiPets()
-            PET_TYPE.KAKU -> getKakuPets()
-            PET_TYPE.NOSTOROS -> getNostorosPets()
-            PET_TYPE.TORA -> getToraPets()
-            PET_TYPE.KAKI -> getKakiPets()
-            PET_TYPE.STORAJI -> getStorajiPets()
-            PET_TYPE.PENTAS -> getPentasPets()
-            PET_TYPE.LAGOGO -> getLagogoPets()
-            PET_TYPE.BOOGI -> getBoogiPets()
-            PET_TYPE.DOORI -> getDooriPets()
-            PET_TYPE.RARE -> getRarePets()
-            PET_TYPE.KEIBEE -> getKeibeePets()
-            PET_TYPE.MONASIPU -> getMonasipuPets()
-            PET_TYPE.MARABIA -> getMarabiaPets()
-            PET_TYPE.GODSNAKE -> getGodSnakePets()
+            PET_TYPE.SPECIAL -> getPetArray(SpecialFactory())
+            PET_TYPE.FOURGUARDIANSOGDS -> getPetArray(FourGuardiansGodFactory())
+            PET_TYPE.WEREWOLF -> getPetArray(WereWolfPetFactory())
+            PET_TYPE.BEAST -> getPetArray(BeastFactory())
+            PET_TYPE.YANGIRO -> getPetArray(YangiroFactory())
+            PET_TYPE.OGAROS -> getPetArray(OgarosFactory())
+            PET_TYPE.SAMDUSA -> getPetArray(SamdusaFactory())
+            PET_TYPE.HYUBO -> getPetArray(HyuboFactory())
+            PET_TYPE.BUBI -> getPetArray(BubiFactory())
+            PET_TYPE.KATARKAS -> getPetArray(KatarkasFactory())
+            PET_TYPE.MANMO -> getPetArray(ManmoFactory())
+            PET_TYPE.GIGAROS -> getPetArray(GigarosFactory())
+            PET_TYPE.SNAKE -> getPetArray(SnakeFactory())
+            PET_TYPE.DOG -> getPetArray(DogFactory())
+            PET_TYPE.ZYAG -> getPetArray(ZyagFactory())
+            PET_TYPE.BERGA -> getPetArray(BergaFactory())
+            PET_TYPE.DAINO -> getPetArray(DainoFactory())
+            PET_TYPE.WOOPU2D -> getPetArray(Woopu2DFactory())
+            PET_TYPE.WOOPU -> getPetArray(WoopuFactory())
+            PET_TYPE.DORABYS -> getPetArray(DorabysFactory())
+            PET_TYPE.KUKURU -> getPetArray(KukuruFactory())
+            PET_TYPE.BERON -> getPetArray(BeronFactory())
+            PET_TYPE.GORDON -> getPetArray(GordonFactory())
+            PET_TYPE.NEGOS -> getPetArray(NegosFactory())
+            PET_TYPE.MUI -> getPetArray(MuiFactory())
+            PET_TYPE.KKOMI -> getPetArray(KkomiFactory())
+            PET_TYPE.KAKU -> getPetArray(KakuFactory())
+            PET_TYPE.NOSTOROS -> getPetArray(NostorosFactory())
+            PET_TYPE.TORA -> getPetArray(ToraFactory())
+            PET_TYPE.KAKI -> getPetArray(KakiFactory())
+            PET_TYPE.STORAJI -> getPetArray(StorajiFactory())
+            PET_TYPE.PENTAS -> getPetArray(PentasFactory())
+            PET_TYPE.LAGOGO -> getPetArray(LagogoFactory())
+            PET_TYPE.BOOGI -> getPetArray(BoogiFactory())
+            PET_TYPE.DOORI -> getPetArray(DooriFactory())
+            PET_TYPE.KEIBEE -> getPetArray(KeibeeFactory())
+            PET_TYPE.RARE -> getPetArray(RareFactory())
+            PET_TYPE.MONASIPU -> getPetArray(MonasipuFactory())
+            PET_TYPE.MARABIA -> getPetArray(MarabiaFactory())
+            PET_TYPE.GODSNAKE -> getPetArray(GodSnakeFactory())
         }
 
         // 특정 타입 페트류 이름 얻기 ( ~류 하위 페트 이름 얻기: 반보로, 얀기로 ... )
         fun getTypePetNames(type: PET_TYPE): Array<CharSequence> {
-//            var typePets:Array<Pet> = when(type) {
-//                PET_TYPE.SPECIAL -> getSpecialPets()
-//                PET_TYPE.FOURGUARDIANSOGDS -> getFourguardiansgodPets()
-//                PET_TYPE.WEREWOLF -> getWereWolfPets()
-//                PET_TYPE.BEAST -> getBeastPets()
-//                PET_TYPE.YANGIRO -> getYangiroPets()
-//                PET_TYPE.OGAROS -> getOgarosPets()
-//            }
             var typePets:Array<Pet> = getTypePets(type)
 
             val typePetNames: ArrayList<CharSequence> = ArrayList()
