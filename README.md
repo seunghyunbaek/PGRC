@@ -5,7 +5,7 @@
 
 #### 페트 성장률 계산기 
 > <p>
-<img src="/preview/PGRC_server_crop_320.jpg" width="200px" height="400px"/> <img src="/preview/PGRC_collection_320.jpg" width="200px" height="400px"/> <img src="/preview/PGRC_calculation1_320.jpg" width="200px" height="400px"/> <img src="/preview/pgrc_PGRC_calculation2_320.jpg" width="200px" height="400px"/> <br/></p>
+<img src="/preview/PGRC_server_crop_320.jpg" width="200px" height="400px"/> <img src="/preview/PGRC_collection_320.jpg" width="200px" height="400px"/> <img src="/preview/PGRC_calculation1_320.jpg" width="200px" height="400px"/> <img src="/preview/PGRC_calculation2_320.jpg" width="200px" height="400px"/> <br/></p>
 >
 
 > 페트의 성장률을 계산하고 확인할 수 있습니다.
